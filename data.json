@@ -3,7 +3,7 @@
         {
             "name": "None",
             "unitGold": 0,
-            "asset": "assets/Soldier.png",
+            "asset": "assets/None.png",
             "tags": []
         },
         {
@@ -73,7 +73,7 @@
             "cost": 0,
             "refitFrom": "*",
             "unitGold": 0,
-            "asset": "assets/Soldier.png",
+            "asset": "assets/None.png",
             "tags": []
         },
         {
@@ -108,7 +108,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Crossbow",
@@ -116,7 +116,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         }
     ],
     "weaponUpgrades": [
@@ -127,7 +127,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         }
     ],
     "spells": [
@@ -137,7 +137,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         }
     ],
     "structures": [
@@ -147,7 +147,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         }
     ],
     "packs": [
@@ -157,7 +157,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Captains Tricorne",
@@ -165,7 +165,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Fins of the Unagi",
@@ -173,7 +173,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Bag of Holding",
@@ -181,7 +181,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Greaves of the Fox",
@@ -189,7 +189,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Mage Initiate",
@@ -197,7 +197,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Cape of the Bat",
@@ -205,7 +205,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Barding",
@@ -213,7 +213,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Carrier Saddle",
@@ -221,7 +221,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Gloves of the Tiger",
@@ -229,7 +229,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Honor Guard",
@@ -237,7 +237,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Heavy Armor",
@@ -245,7 +245,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Arrow Slits",
@@ -253,7 +253,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Scout Cavalry",
@@ -261,7 +261,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Veterinarian",
@@ -269,7 +269,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Constructor",
@@ -277,7 +277,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Cloak of the Chameleon",
@@ -285,7 +285,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         }
     ],
     "potions": [
@@ -295,7 +295,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Healing",
@@ -303,7 +303,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Mana",
@@ -311,7 +311,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Haste",
@@ -319,7 +319,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Flying",
@@ -327,7 +327,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Invisibility",
@@ -335,7 +335,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Stoneskin",
@@ -343,7 +343,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Warp",
@@ -351,7 +351,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         },
         {
             "name": "Potion of Enlarging",
@@ -359,7 +359,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
-            "asset": "assets/Soldier.png"
+            "asset": "assets/None.png"
         }
     ]
 }
