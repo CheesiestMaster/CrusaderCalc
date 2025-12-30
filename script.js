@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const unitTypeSelect = document.createElement('select');
     unitTypeSelect.id = 'unitTypeSelect';
-    unitTypeSelect.addEventListener('change', updateValues);
     document.body.appendChild(unitTypeSelect);
 
     for (const unitType of data.unit_types || []) {
@@ -109,14 +108,43 @@ document.addEventListener('DOMContentLoaded', async () => {
     refitTypeSelect.addEventListener('change', updateValues);
     document.body.appendChild(refitTypeSelect);
 
-    for (const refitType of data.refit_types || []) {
-        if (refitType.refitFrom === '*' || refitType.refitFrom === unitTypeSelect.value) {
-            const option = document.createElement('option');
-            option.value = refitType.name;
-            option.textContent = refitType.name;
-            refitTypeSelect.appendChild(option);
+    // Function to update refit dropdown based on selected unit type
+    function updateRefitDropdown() {
+        // Clear existing options
+        refitTypeSelect.innerHTML = '';
+        
+        const selectedUnitType = unitTypeSelect.value;
+        
+        // Add refit options that match the selected unit type
+        for (const refitType of data.refit_types || []) {
+            if (refitType.refitFrom === '*' || refitType.refitFrom === selectedUnitType) {
+                const option = document.createElement('option');
+                option.value = refitType.name;
+                option.textContent = refitType.name;
+                refitTypeSelect.appendChild(option);
+            }
+        }
+        
+        // Set default to "None" if available
+        if (refitTypeSelect.querySelector('option[value="None"]')) {
+            refitTypeSelect.value = 'None';
         }
     }
+
+    // Initial population
+    updateRefitDropdown();
+
+    // Update refit dropdown and all other dropdowns when unit type or refit type changes
+    unitTypeSelect.addEventListener('change', () => {
+        updateRefitDropdown();
+        updateAllDropdowns();
+        updateValues();
+    });
+    
+    refitTypeSelect.addEventListener('change', () => {
+        updateAllDropdowns();
+        updateValues();
+    });
 
     const refitTypeImg = document.createElement('img');
     refitTypeImg.id = 'refitTypeImg';
@@ -159,16 +187,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     siege1Select.addEventListener('change', updateValues);
     document.body.appendChild(siege1Select);
 
-    for (const siege of data.structures || []) {
-        const option = document.createElement('option');
-        option.value = siege.name;
-        option.textContent = siege.name;
-        siege1Select.appendChild(option);
-    }
-    if (siege1Select.querySelector('option[value="None"]')) {
-        siege1Select.value = 'None';
-    }
-
     const siege1Img = document.createElement('img');
     siege1Img.id = 'siege1Img';
     siege1Img.style.width = '50px';
@@ -179,16 +197,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     siege2Select.id = 'siege2Select';
     siege2Select.addEventListener('change', updateValues);
     document.body.appendChild(siege2Select);
-
-    for (const siege of data.structures || []) {
-        const option = document.createElement('option');
-        option.value = siege.name;
-        option.textContent = siege.name;
-        siege2Select.appendChild(option);
-    }
-    if (siege2Select.querySelector('option[value="None"]')) {
-        siege2Select.value = 'None';
-    }
 
     const siege2Img = document.createElement('img');
     siege2Img.id = 'siege2Img';
@@ -205,16 +213,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     packsSelect.addEventListener('change', updateValues);
     document.body.appendChild(packsSelect);
 
-    for (const pack of data.packs || []) {
-        const option = document.createElement('option');
-        option.value = pack.name;
-        option.textContent = pack.name;
-        packsSelect.appendChild(option);
-    }
-    if (packsSelect.querySelector('option[value="None"]')) {
-        packsSelect.value = 'None';
-    }
-
     const packsImg = document.createElement('img');
     packsImg.id = 'packsImg';
     packsImg.style.width = '50px';
@@ -229,16 +227,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     potionsSelect.id = 'potionsSelect';
     potionsSelect.addEventListener('change', updateValues);
     document.body.appendChild(potionsSelect);
-
-    for (const potion of data.potions || []) {
-        const option = document.createElement('option');
-        option.value = potion.name;
-        option.textContent = potion.name;
-        potionsSelect.appendChild(option);
-    }
-    if (potionsSelect.querySelector('option[value="None"]')) {
-        potionsSelect.value = 'None';
-    }
 
     const potionsImg = document.createElement('img');
     potionsImg.id = 'potionsImg';
@@ -274,15 +262,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         weaponSelect.addEventListener('change', updateValues);
         document.body.appendChild(weaponSelect);
 
-        for (const weapon of data.weapons || []) {
-            const option = document.createElement('option');
-            option.value = weapon.name;
-            option.textContent = weapon.name;
-            weaponSelect.appendChild(option);
-        }
-        if (weaponSelect.querySelector('option[value="None"]')) {
-            weaponSelect.value = 'None';
-        }
+        // Weapons will be populated dynamically
 
         const weaponImg = document.createElement('img');
         weaponImg.id = `weapon${i}Img`;
@@ -321,15 +301,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         weaponUpgradeSelect.addEventListener('change', updateValues);
         document.body.appendChild(weaponUpgradeSelect);
 
-        for (const weaponUpgrade of data.weaponUpgrades || []) {
-            const option = document.createElement('option');
-            option.value = weaponUpgrade.name;
-            option.textContent = weaponUpgrade.name;
-            weaponUpgradeSelect.appendChild(option);
-        }
-        if (weaponUpgradeSelect.querySelector('option[value="None"]')) {
-            weaponUpgradeSelect.value = 'None';
-        }
+        // Weapon upgrades will be populated dynamically
 
         const weaponUpgradeImg = document.createElement('img');
         weaponUpgradeImg.id = `weaponUpgrade${i}Img`;
@@ -368,15 +340,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         spellSelect.addEventListener('change', updateValues);
         document.body.appendChild(spellSelect);
 
-        for (const spell of data.spells || []) {
-            const option = document.createElement('option');
-            option.value = spell.name;
-            option.textContent = spell.name;
-            spellSelect.appendChild(option);
-        }
-        if (spellSelect.querySelector('option[value="None"]')) {
-            spellSelect.value = 'None';
-        }
+        // Spells will be populated dynamically
 
         const spellImg = document.createElement('img');
         spellImg.id = `spell${i}Img`;
@@ -415,15 +379,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         structureSelect.addEventListener('change', updateValues);
         document.body.appendChild(structureSelect);
 
-        for (const structure of data.structures || []) {
-            const option = document.createElement('option');
-            option.value = structure.name;
-            option.textContent = structure.name;
-            structureSelect.appendChild(option);
-        }
-        if (structureSelect.querySelector('option[value="None"]')) {
-            structureSelect.value = 'None';
-        }
+        // Structures will be populated dynamically
 
         const structureImg = document.createElement('img');
         structureImg.id = `structure${i}Img`;
@@ -464,6 +420,121 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!name || !data[category]) return 0;
         const item = data[category].find(item => item.name === name);
         return item && item[attribute] !== undefined ? item[attribute] : 0;
+    }
+
+    // Helper function to get active tags (from refit if it has tags, otherwise from unit type)
+    function getActiveTags() {
+        const refitType = data.refit_types?.find(r => r.name === refitTypeSelect.value);
+        if (refitType && refitType.tags && refitType.tags.length > 0) {
+            return refitType.tags;
+        }
+        const unitType = data.unit_types?.find(u => u.name === unitTypeSelect.value);
+        return unitType?.tags || [];
+    }
+
+    // Helper function to check if an item should be shown based on tags
+    function shouldShowItem(item) {
+        const activeTags = getActiveTags();
+        const unitTypeName = unitTypeSelect.value;
+        const refitTypeName = refitTypeSelect.value;
+
+        // Check blockTags first - if any blockTag matches active tags, block the item
+        const blockTags = item.blockTags || [];
+        for (const blockTag of blockTags) {
+            if (activeTags.includes(blockTag)) {
+                return false;
+            }
+        }
+
+        // Check if unit type or refit type is in extraUnits, or if extraUnits contains "*"
+        const extraUnits = item.extraUnits || [];
+        if (extraUnits.includes('*') || extraUnits.includes(unitTypeName) || extraUnits.includes(refitTypeName)) {
+            return true;
+        }
+
+        // Check if any allowedTags match active tags
+        const allowedTags = item.allowedTags || [];
+        for (const allowedTag of allowedTags) {
+            if (activeTags.includes(allowedTag)) {
+                return true;
+            }
+        }
+
+        // If no allowedTags specified and no extraUnits match, don't show it
+        // (items need explicit permission via allowedTags or extraUnits)
+        return false;
+    }
+
+    // Function to populate a dropdown with filtered items
+    function populateDropdown(selectElement, items, currentValue) {
+        selectElement.innerHTML = '';
+        for (const item of items) {
+            if (shouldShowItem(item)) {
+                const option = document.createElement('option');
+                option.value = item.name;
+                option.textContent = item.name;
+                selectElement.appendChild(option);
+            }
+        }
+        // Try to restore previous selection or default to "None"
+        if (currentValue && selectElement.querySelector(`option[value="${currentValue}"]`)) {
+            selectElement.value = currentValue;
+        } else if (selectElement.querySelector('option[value="None"]')) {
+            selectElement.value = 'None';
+        }
+    }
+
+    // Function to update all dropdowns based on current unit/refit selection
+    function updateAllDropdowns() {
+        // Update siege dropdowns
+        const siege1Current = siege1Select.value;
+        const siege2Current = siege2Select.value;
+        populateDropdown(siege1Select, data.structures || [], siege1Current);
+        populateDropdown(siege2Select, data.structures || [], siege2Current);
+
+        // Update packs dropdown
+        const packsCurrent = packsSelect.value;
+        populateDropdown(packsSelect, data.packs || [], packsCurrent);
+
+        // Update potions dropdown
+        const potionsCurrent = potionsSelect.value;
+        populateDropdown(potionsSelect, data.potions || [], potionsCurrent);
+
+        // Update weapon dropdowns
+        for (let i = 1; i <= 5; i++) {
+            const weaponSelect = document.getElementById(`weapon${i}Select`);
+            if (weaponSelect) {
+                const current = weaponSelect.value;
+                populateDropdown(weaponSelect, data.weapons || [], current);
+            }
+        }
+
+        // Update weapon upgrade dropdowns
+        for (let i = 1; i <= 5; i++) {
+            const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
+            if (weaponUpgradeSelect) {
+                const current = weaponUpgradeSelect.value;
+                populateDropdown(weaponUpgradeSelect, data.weaponUpgrades || [], current);
+            }
+        }
+
+        // Update spell dropdowns
+        for (let i = 1; i <= 5; i++) {
+            const spellSelect = document.getElementById(`spell${i}Select`);
+            if (spellSelect) {
+                const current = spellSelect.value;
+                populateDropdown(spellSelect, data.spells || [], current);
+            }
+        }
+
+        // Update structure dropdowns
+        for (let i = 1; i <= 5; i++) {
+            const structureSelect = document.getElementById(`structure${i}Select`);
+            if (structureSelect) {
+                const current = structureSelect.value;
+                populateDropdown(structureSelect, data.structures || [], current);
+            }
+        }
     }
 
     // Function to update all images
@@ -652,52 +723,110 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
-        // Calculate total unit cost
-        let totalCost = 0;
+        // Get unit type cost (must be paid from company gold, not unit gold)
+        const unitTypeCost = getDataValue('unit_types', unitTypeSelect.value, 'cost');
         
-        // Add refit cost
-        totalCost += getDataValue('refit_types', refitTypeSelect.value, 'cost');
+        // Calculate refit cost (must be paid from company gold, not unit gold)
+        const refitCost = getDataValue('refit_types', refitTypeSelect.value, 'cost');
         
-        // Add siege costs
-        totalCost += siege1Cost + siege2Cost;
+        // Collect all non-refit costs (can be paid from unit gold)
+        // Note: unit type cost is NOT included here as it must be paid from company gold
+        const nonRefitCosts = [];
         
-        // Add pack cost
-        totalCost += packsCost;
+        // Siege costs
+        if (siege1Cost > 0) nonRefitCosts.push(siege1Cost);
+        if (siege2Cost > 0) nonRefitCosts.push(siege2Cost);
         
-        // Add potion cost
-        totalCost += potionsCost;
+        // Pack cost
+        if (packsCost > 0) nonRefitCosts.push(packsCost);
         
-        // Add weapon costs
+        // Potion cost
+        if (potionsCost > 0) nonRefitCosts.push(potionsCost);
+        
+        // Weapon costs
         for (let i = 1; i <= 5; i++) {
             const weaponSelect = document.getElementById(`weapon${i}Select`);
             if (weaponSelect) {
-                totalCost += getDataValue('weapons', weaponSelect.value, 'cost');
+                const weaponCost = getDataValue('weapons', weaponSelect.value, 'cost');
+                if (weaponCost > 0) nonRefitCosts.push(weaponCost);
             }
         }
         
-        // Add weapon upgrade costs
+        // Weapon upgrade costs
         for (let i = 1; i <= 5; i++) {
             const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
             if (weaponUpgradeSelect) {
-                totalCost += getDataValue('weaponUpgrades', weaponUpgradeSelect.value, 'cost');
+                const weaponUpgradeCost = getDataValue('weaponUpgrades', weaponUpgradeSelect.value, 'cost');
+                if (weaponUpgradeCost > 0) nonRefitCosts.push(weaponUpgradeCost);
             }
         }
         
-        // Add spell costs
+        // Spell costs
         for (let i = 1; i <= 5; i++) {
             const spellSelect = document.getElementById(`spell${i}Select`);
             if (spellSelect) {
-                totalCost += getDataValue('spells', spellSelect.value, 'cost');
+                const spellCost = getDataValue('spells', spellSelect.value, 'cost');
+                if (spellCost > 0) nonRefitCosts.push(spellCost);
             }
         }
         
-        // Add structure costs
+        // Structure costs
         for (let i = 1; i <= 5; i++) {
             const structureSelect = document.getElementById(`structure${i}Select`);
             if (structureSelect) {
-                totalCost += getDataValue('structures', structureSelect.value, 'cost');
+                const structureCost = getDataValue('structures', structureSelect.value, 'cost');
+                if (structureCost > 0) nonRefitCosts.push(structureCost);
             }
         }
+        
+        // Sort costs descending to try to pay larger items from unit gold first
+        nonRefitCosts.sort((a, b) => b - a);
+        
+        // Track unit gold pools separately
+        // Each purchase must be paid wholly from one pool: base unit gold, refit unit gold, or company gold
+        let baseUnitGoldRemaining = unitTypeGold;
+        let refitUnitGoldRemaining = refitTypeGold;
+        let baseUnitGoldUsed = 0;
+        let refitUnitGoldUsed = 0;
+        const costsPaidFromCompanyGold = [];
+        
+        for (const cost of nonRefitCosts) {
+            // Try to pay from base unit gold first
+            if (baseUnitGoldRemaining >= cost) {
+                baseUnitGoldUsed += cost;
+                baseUnitGoldRemaining -= cost;
+            }
+            // If base unit gold isn't enough, try refit unit gold
+            else if (refitUnitGoldRemaining >= cost) {
+                refitUnitGoldUsed += cost;
+                refitUnitGoldRemaining -= cost;
+            }
+            // If neither unit gold pool has enough, pay from company gold
+            else {
+                costsPaidFromCompanyGold.push(cost);
+            }
+        }
+        
+        // Calculate total unit gold used
+        const unitGoldUsed = baseUnitGoldUsed + refitUnitGoldUsed;
+        const remainingUnitGold = baseUnitGoldRemaining + refitUnitGoldRemaining;
+        
+        // Unit type cost and refit cost always come from company gold
+        let companyGoldUsed = 0;
+        if (unitTypeCost > 0) {
+            companyGoldUsed += unitTypeCost;
+        }
+        if (refitCost > 0) {
+            companyGoldUsed += refitCost;
+        }
+        
+        // Add non-refit costs that couldn't be paid from unit gold
+        for (const cost of costsPaidFromCompanyGold) {
+            companyGoldUsed += cost;
+        }
+        
+        // Calculate total cost
+        const totalCost = unitGoldUsed + companyGoldUsed;
         
         // Update unit cost input
         const unitCostInput = document.getElementById('unitCostInput');
@@ -705,23 +834,30 @@ document.addEventListener('DOMContentLoaded', async () => {
             unitCostInput.value = totalCost;
         }
 
-        // Calculate unit gold remaining
-        const unitGoldTotal = unitTypeGold + refitTypeGold;
+        // Update unit gold remaining
         const unitGoldRemainingInput = document.getElementById('unitGoldRemainingInput');
         if (unitGoldRemainingInput) {
-            unitGoldRemainingInput.value = unitGoldTotal;
+            unitGoldRemainingInput.value = remainingUnitGold;
         }
 
-        // Calculate remaining budget
+        // Calculate remaining company gold budget
         const goldBudgetInput = document.getElementById('goldBudgetInput');
         const remainingBudgetInput = document.getElementById('remainingBudgetInput');
         if (goldBudgetInput && remainingBudgetInput) {
             const goldBudget = parseFloat(goldBudgetInput.value) || 0;
-            const remainingBudget = goldBudget - totalCost;
-            remainingBudgetInput.value = remainingBudget >= 0 ? remainingBudget : 0;
+            const remainingBudget = goldBudget - companyGoldUsed;
+            remainingBudgetInput.value = remainingBudget;
+            
+            // Add "bad" class if budget is negative
+            if (remainingBudget < 0) {
+                remainingBudgetInput.classList.add('bad');
+            } else {
+                remainingBudgetInput.classList.remove('bad');
+            }
         }
     }
 
-    // Initialize all values on page load
+    // Initialize all dropdowns and values on page load
+    updateAllDropdowns();
     updateValues();
 });

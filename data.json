@@ -2,66 +2,77 @@
     "unit_types": [
         {
             "name": "None",
+            "cost": 0,
             "unitGold": 0,
             "asset": "assets/None.png",
-            "tags": []
+            "tags": ["NONE"]
         },
         {
             "name": "Soldiers",
+            "cost": 1,
             "unitGold": 1,
             "asset": "assets/Soldier.png",
             "tags": ["INF", "ARMED", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Healers",
+            "cost": 1,
             "unitGold": 0,
             "asset": "assets/Healer.png",
             "tags": ["INF", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Laborers",
+            "cost": 1,
             "unitGold": 1,
             "asset": "assets/Laborer.png",
             "tags": ["INF", "NO CARGO", "NO MAGE", "BUILDER"]
         },
         {
             "name": "Siege Crew",
+            "cost": 1,
             "unitGold": 2,
             "asset": "assets/Siege_Crew.png",
             "tags": ["INF", "SIEGE", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Mages",
+            "cost": 1,
             "unitGold": 1,
             "asset": "assets/Mage.png",
             "tags": ["INF", "NO CARGO", "MAGE"]
         },
         {
             "name": "Supply Cart",
+            "cost": 1,
             "unitGold": 0,
             "asset": "assets/Supply_Cart.png",
             "tags": ["CAV", "NO MAGE", "CARGO ONLY"]
         },
         {
             "name": "Knights",
+            "cost": 1,
             "unitGold": 1,
             "asset": "assets/Knight.png",
             "tags": ["CAV", "ARMED", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Line Breakers",
+            "cost": 1,
             "unitGold": 0,
             "asset": "assets/Line_Breaker.png",
             "tags": ["WARB", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Sky Beast",
+            "cost": 1,
             "unitGold": 0,
             "asset": "assets/Sky_Beast.png",
             "tags": ["WARB", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Monstrosity",
+            "cost": 1,
             "unitGold": 0,
             "asset": "assets/Monstrosity.png",
             "tags": ["WARB", "NO CARGO", "NO MAGE"]
@@ -164,128 +175,128 @@
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Tricorn.png"
         },
         {
             "name": "Fins of the Unagi",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Fins_of_the_Unagi.png"
         },
         {
             "name": "Bag of Holding",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Bag_of_Holding.png"
         },
         {
             "name": "Greaves of the Fox",
             "cost": 3,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Greaves_of_the_Fox.png"
         },
         {
             "name": "Mage Initiate",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Mage_Initiate.png"
         },
         {
             "name": "Cape of the Bat",
             "cost": 3,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Cape_of_the_Bat.png"
         },
         {
             "name": "Barding",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Barding.png"
         },
         {
             "name": "Carrier Saddle",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Carriers_Saddle.png"
         },
         {
             "name": "Gloves of the Tiger",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Tiger_Gauntlets.png"
         },
         {
             "name": "Honor Guard",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Honor_Guard.png"
         },
         {
             "name": "Heavy Armor",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Breastplate.png"
         },
         {
             "name": "Arrow Slits",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Arrow_Slits.png"
         },
         {
             "name": "Scout Cavalry",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Scout_Cavalry.png"
         },
         {
             "name": "Veterinarian",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Vet.png"
         },
         {
             "name": "Constructor",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Constructor_Pack.png"
         },
         {
             "name": "Cloak of the Chameleon",
             "cost": 2,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Cloak_of_Chameleon.png"
         }
     ],
     "potions": [
@@ -302,64 +313,64 @@
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Health_Potion.png"
         },
         {
             "name": "Potion of Mana",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Mana_Potion.png"
         },
         {
             "name": "Potion of Haste",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Haste_Potion.png"
         },
         {
             "name": "Potion of Flying",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Flying_Potion.png"
         },
         {
             "name": "Potion of Invisibility",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Invis_Potion.png"
         },
         {
             "name": "Potion of Stoneskin",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Stoneskin_Potion.png"
         },
         {
             "name": "Potion of Warp",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Warp_Potion.png"
         },
         {
             "name": "Potion of Enlarging",
             "cost": 1,
             "allowedTags": [],
             "extraUnits": ["*"],
-            "blockTags": [],
-            "asset": "assets/None.png"
+            "blockTags": ["NONE"],
+            "asset": "assets/Potion_of_Enlarging.png"
         }
     ]
 }

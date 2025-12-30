@@ -22,6 +22,10 @@ input:disabled {
     color: #888;
 }
 
+input.bad {
+    border-color: #ff0000;
+}
+
 input[type="number"]:disabled {
     appearance: textfield;      /* Standard */
     -moz-appearance: textfield; /* Firefox */
