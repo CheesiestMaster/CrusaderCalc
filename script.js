@@ -94,6 +94,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         unitTypeSelect.value = 'None';
     }
 
+    const unitTypeImg = document.createElement('img');
+    unitTypeImg.id = 'unitTypeImg';
+    unitTypeImg.style.width = '50px';
+    unitTypeImg.style.height = '50px';
+    document.body.appendChild(unitTypeImg);
+
     const refitTypeLabel = document.createElement('label');
     refitTypeLabel.textContent = ' Refit Type ';
     document.body.appendChild(refitTypeLabel);
@@ -111,6 +117,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             refitTypeSelect.appendChild(option);
         }
     }
+
+    const refitTypeImg = document.createElement('img');
+    refitTypeImg.id = 'refitTypeImg';
+    refitTypeImg.style.width = '50px';
+    refitTypeImg.style.height = '50px';
+    document.body.appendChild(refitTypeImg);
 
     document.body.appendChild(document.createElement('br'));
 
@@ -157,6 +169,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         siege1Select.value = 'None';
     }
 
+    const siege1Img = document.createElement('img');
+    siege1Img.id = 'siege1Img';
+    siege1Img.style.width = '50px';
+    siege1Img.style.height = '50px';
+    document.body.appendChild(siege1Img);
+
     const siege2Select = document.createElement('select');
     siege2Select.id = 'siege2Select';
     siege2Select.addEventListener('change', updateValues);
@@ -171,6 +189,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (siege2Select.querySelector('option[value="None"]')) {
         siege2Select.value = 'None';
     }
+
+    const siege2Img = document.createElement('img');
+    siege2Img.id = 'siege2Img';
+    siege2Img.style.width = '50px';
+    siege2Img.style.height = '50px';
+    document.body.appendChild(siege2Img);
 
     const packsLabel = document.createElement('label');
     packsLabel.textContent = ' Pack ';
@@ -191,6 +215,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         packsSelect.value = 'None';
     }
 
+    const packsImg = document.createElement('img');
+    packsImg.id = 'packsImg';
+    packsImg.style.width = '50px';
+    packsImg.style.height = '50px';
+    document.body.appendChild(packsImg);
+
     const potionsLabel = document.createElement('label');
     potionsLabel.textContent = ' Potion ';
     document.body.appendChild(potionsLabel);
@@ -210,39 +240,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         potionsSelect.value = 'None';
     }
 
+    const potionsImg = document.createElement('img');
+    potionsImg.id = 'potionsImg';
+    potionsImg.style.width = '50px';
+    potionsImg.style.height = '50px';
+    document.body.appendChild(potionsImg);
+
     document.body.appendChild(document.createElement('br'));
 
     const costLabel1 = document.createElement('label');
     costLabel1.textContent = 'Cost ';
     document.body.appendChild(costLabel1);
 
-    const siege1CostInput = document.createElement('input');
-    siege1CostInput.id = 'siege1CostInput';
-    siege1CostInput.type = 'number';
-    siege1CostInput.placeholder = '0';
-    siege1CostInput.disabled = true;
-    document.body.appendChild(siege1CostInput);
-
-    const siege2CostInput = document.createElement('input');
-    siege2CostInput.id = 'siege2CostInput';
-    siege2CostInput.type = 'number';
-    siege2CostInput.placeholder = '0';
-    siege2CostInput.disabled = true;
-    document.body.appendChild(siege2CostInput);
-
-    const packsCostInput = document.createElement('input');
-    packsCostInput.id = 'packsCostInput';
-    packsCostInput.type = 'number';
-    packsCostInput.placeholder = '0';
-    packsCostInput.disabled = true;
-    document.body.appendChild(packsCostInput);
-
-    const potionsCostInput = document.createElement('input');
-    potionsCostInput.id = 'potionsCostInput';
-    potionsCostInput.type = 'number';
-    potionsCostInput.placeholder = '0';
-    potionsCostInput.disabled = true;
-    document.body.appendChild(potionsCostInput);
+    const costInputIds = ['siege1CostInput', 'siege2CostInput', 'packsCostInput', 'potionsCostInput'];
+    for (const id of costInputIds) {
+        const input = document.createElement('input');
+        input.id = id;
+        input.type = 'number';
+        input.placeholder = '0';
+        input.disabled = true;
+        document.body.appendChild(input);
+    }
 
     document.body.appendChild(document.createElement('br'));
 
@@ -265,6 +283,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (weaponSelect.querySelector('option[value="None"]')) {
             weaponSelect.value = 'None';
         }
+
+        const weaponImg = document.createElement('img');
+        weaponImg.id = `weapon${i}Img`;
+        weaponImg.style.width = '50px';
+        weaponImg.style.height = '50px';
+        document.body.appendChild(weaponImg);
     }
     document.body.appendChild(document.createElement('br'));
 
@@ -272,14 +296,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     costLabel2.textContent = 'Cost ';
     document.body.appendChild(costLabel2);
 
+    const weaponCostInputIds = [];
     for (let i = 1; i <= 5; i++) {
-        const weaponCostInput = document.createElement('input');
-        weaponCostInput.id = `weapon${i}CostInput`;
-        weaponCostInput.type = 'number';
-        weaponCostInput.placeholder = '0';
-        weaponCostInput.disabled = true;
-        document.body.appendChild(weaponCostInput);
+        weaponCostInputIds.push(`weapon${i}CostInput`);
     }
+    for (const id of weaponCostInputIds) {
+        const input = document.createElement('input');
+        input.id = id;
+        input.type = 'number';
+        input.placeholder = '0';
+        input.disabled = true;
+        document.body.appendChild(input);
+    }
+
     document.body.appendChild(document.createElement('br'));
 
     // Weapon Upgrades (5 dropdowns)
@@ -301,6 +330,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (weaponUpgradeSelect.querySelector('option[value="None"]')) {
             weaponUpgradeSelect.value = 'None';
         }
+
+        const weaponUpgradeImg = document.createElement('img');
+        weaponUpgradeImg.id = `weaponUpgrade${i}Img`;
+        weaponUpgradeImg.style.width = '50px';
+        weaponUpgradeImg.style.height = '50px';
+        document.body.appendChild(weaponUpgradeImg);
     }
     document.body.appendChild(document.createElement('br'));
 
@@ -308,14 +343,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     costLabel3.textContent = 'Cost ';
     document.body.appendChild(costLabel3);
 
+    const weaponUpgradeCostInputIds = [];
     for (let i = 1; i <= 5; i++) {
-        const weaponUpgradeCostInput = document.createElement('input');
-        weaponUpgradeCostInput.id = `weaponUpgrade${i}CostInput`;
-        weaponUpgradeCostInput.type = 'number';
-        weaponUpgradeCostInput.placeholder = '0';
-        weaponUpgradeCostInput.disabled = true;
-        document.body.appendChild(weaponUpgradeCostInput);
+        weaponUpgradeCostInputIds.push(`weaponUpgrade${i}CostInput`);
     }
+    for (const id of weaponUpgradeCostInputIds) {
+        const input = document.createElement('input');
+        input.id = id;
+        input.type = 'number';
+        input.placeholder = '0';
+        input.disabled = true;
+        document.body.appendChild(input);
+    }
+
     document.body.appendChild(document.createElement('br'));
 
     // Spells (5 dropdowns)
@@ -337,6 +377,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (spellSelect.querySelector('option[value="None"]')) {
             spellSelect.value = 'None';
         }
+
+        const spellImg = document.createElement('img');
+        spellImg.id = `spell${i}Img`;
+        spellImg.style.width = '50px';
+        spellImg.style.height = '50px';
+        document.body.appendChild(spellImg);
     }
     document.body.appendChild(document.createElement('br'));
 
@@ -344,14 +390,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     costLabel4.textContent = 'Cost ';
     document.body.appendChild(costLabel4);
 
+    const spellCostInputIds = [];
     for (let i = 1; i <= 5; i++) {
-        const spellCostInput = document.createElement('input');
-        spellCostInput.id = `spell${i}CostInput`;
-        spellCostInput.type = 'number';
-        spellCostInput.placeholder = '0';
-        spellCostInput.disabled = true;
-        document.body.appendChild(spellCostInput);
+        spellCostInputIds.push(`spell${i}CostInput`);
     }
+    for (const id of spellCostInputIds) {
+        const input = document.createElement('input');
+        input.id = id;
+        input.type = 'number';
+        input.placeholder = '0';
+        input.disabled = true;
+        document.body.appendChild(input);
+    }
+
     document.body.appendChild(document.createElement('br'));
 
     // Structures (5 dropdowns)
@@ -373,6 +424,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (structureSelect.querySelector('option[value="None"]')) {
             structureSelect.value = 'None';
         }
+
+        const structureImg = document.createElement('img');
+        structureImg.id = `structure${i}Img`;
+        structureImg.style.width = '50px';
+        structureImg.style.height = '50px';
+        document.body.appendChild(structureImg);
     }
     document.body.appendChild(document.createElement('br'));
 
@@ -380,20 +437,129 @@ document.addEventListener('DOMContentLoaded', async () => {
     costLabel5.textContent = 'Cost ';
     document.body.appendChild(costLabel5);
 
+    const structureCostInputIds = [];
     for (let i = 1; i <= 5; i++) {
-        const structureCostInput = document.createElement('input');
-        structureCostInput.id = `structure${i}CostInput`;
-        structureCostInput.type = 'number';
-        structureCostInput.placeholder = '0';
-        structureCostInput.disabled = true;
-        document.body.appendChild(structureCostInput);
+        structureCostInputIds.push(`structure${i}CostInput`);
     }
+    for (const id of structureCostInputIds) {
+        const input = document.createElement('input');
+        input.id = id;
+        input.type = 'number';
+        input.placeholder = '0';
+        input.disabled = true;
+        document.body.appendChild(input);
+    }
+
     document.body.appendChild(document.createElement('br'));
+
+    // Helper function to get asset path from data
+    function getAssetPath(category, name) {
+        if (!name || !data[category]) return '';
+        const item = data[category].find(item => item.name === name);
+        return item ? item.asset : '';
+    }
+
+    // Function to update all images
+    function updateImages() {
+        // Unit Type
+        const unitTypeImg = document.getElementById('unitTypeImg');
+        if (unitTypeImg) {
+            const asset = getAssetPath('unit_types', unitTypeSelect.value);
+            unitTypeImg.src = asset || '';
+        }
+
+        // Refit Type
+        const refitTypeImg = document.getElementById('refitTypeImg');
+        if (refitTypeImg) {
+            const asset = getAssetPath('refit_types', refitTypeSelect.value);
+            refitTypeImg.src = asset || '';
+        }
+
+        // Siege 1
+        const siege1Img = document.getElementById('siege1Img');
+        if (siege1Img) {
+            const asset = getAssetPath('structures', siege1Select.value);
+            siege1Img.src = asset || '';
+        }
+
+        // Siege 2
+        const siege2Img = document.getElementById('siege2Img');
+        if (siege2Img) {
+            const asset = getAssetPath('structures', siege2Select.value);
+            siege2Img.src = asset || '';
+        }
+
+        // Pack
+        const packsImg = document.getElementById('packsImg');
+        if (packsImg) {
+            const asset = getAssetPath('packs', packsSelect.value);
+            packsImg.src = asset || '';
+        }
+
+        // Potion
+        const potionsImg = document.getElementById('potionsImg');
+        if (potionsImg) {
+            const asset = getAssetPath('potions', potionsSelect.value);
+            potionsImg.src = asset || '';
+        }
+
+        // Weapons
+        for (let i = 1; i <= 5; i++) {
+            const weaponImg = document.getElementById(`weapon${i}Img`);
+            if (weaponImg) {
+                const weaponSelect = document.getElementById(`weapon${i}Select`);
+                if (weaponSelect) {
+                    const asset = getAssetPath('weapons', weaponSelect.value);
+                    weaponImg.src = asset || '';
+                }
+            }
+        }
+
+        // Weapon Upgrades
+        for (let i = 1; i <= 5; i++) {
+            const weaponUpgradeImg = document.getElementById(`weaponUpgrade${i}Img`);
+            if (weaponUpgradeImg) {
+                const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
+                if (weaponUpgradeSelect) {
+                    const asset = getAssetPath('weaponUpgrades', weaponUpgradeSelect.value);
+                    weaponUpgradeImg.src = asset || '';
+                }
+            }
+        }
+
+        // Spells
+        for (let i = 1; i <= 5; i++) {
+            const spellImg = document.getElementById(`spell${i}Img`);
+            if (spellImg) {
+                const spellSelect = document.getElementById(`spell${i}Select`);
+                if (spellSelect) {
+                    const asset = getAssetPath('spells', spellSelect.value);
+                    spellImg.src = asset || '';
+                }
+            }
+        }
+
+        // Structures
+        for (let i = 1; i <= 5; i++) {
+            const structureImg = document.getElementById(`structure${i}Img`);
+            if (structureImg) {
+                const structureSelect = document.getElementById(`structure${i}Select`);
+                if (structureSelect) {
+                    const asset = getAssetPath('structures', structureSelect.value);
+                    structureImg.src = asset || '';
+                }
+            }
+        }
+    }
 
     function updateValues() {
         const goldBudget = document.getElementById('goldBudgetInput').value;
         const remainingBudget = document.getElementById('remainingBudgetInput').value;
         const unitCost = document.getElementById('unitCostInput').value;
         const unitGoldRemaining = document.getElementById('unitGoldRemainingInput').value;
+        updateImages();
     }
+
+    // Initialize images on page load
+    updateImages();
 });
