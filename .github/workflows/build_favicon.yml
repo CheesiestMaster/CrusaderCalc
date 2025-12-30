@@ -20,7 +20,7 @@ jobs:
 
       - name: Ensure ImageMagick is available
         run: |
-          magick -version
+          convert -version
 
       - name: Build favicon.ico deterministically from ./icon.png
         shell: bash
