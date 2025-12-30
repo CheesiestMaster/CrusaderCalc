@@ -21,7 +21,7 @@ jobs:
 
       - name: Ensure ImageMagick is available
         run: |
-          convert -version
+          convert -version || apt-get install -y imagemagick
 
       - name: Build favicon.ico deterministically from ./icon.png
         shell: bash
