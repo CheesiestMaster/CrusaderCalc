@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         option.textContent = unitType.name;
         unitTypeSelect.appendChild(option);
     }
+    if (unitTypeSelect.querySelector('option[value="None"]')) {
+        unitTypeSelect.value = 'None';
+    }
 
     const refitTypeLabel = document.createElement('label');
     refitTypeLabel.textContent = ' Refit Type ';
@@ -150,6 +153,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         option.textContent = siege.name;
         siege1Select.appendChild(option);
     }
+    if (siege1Select.querySelector('option[value="None"]')) {
+        siege1Select.value = 'None';
+    }
 
     const siege2Select = document.createElement('select');
     siege2Select.id = 'siege2Select';
@@ -161,6 +167,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         option.value = siege.name;
         option.textContent = siege.name;
         siege2Select.appendChild(option);
+    }
+    if (siege2Select.querySelector('option[value="None"]')) {
+        siege2Select.value = 'None';
     }
 
     const packsLabel = document.createElement('label');
@@ -178,6 +187,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         option.textContent = pack.name;
         packsSelect.appendChild(option);
     }
+    if (packsSelect.querySelector('option[value="None"]')) {
+        packsSelect.value = 'None';
+    }
 
     const potionsLabel = document.createElement('label');
     potionsLabel.textContent = ' Potion ';
@@ -193,6 +205,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         option.value = potion.name;
         option.textContent = potion.name;
         potionsSelect.appendChild(option);
+    }
+    if (potionsSelect.querySelector('option[value="None"]')) {
+        potionsSelect.value = 'None';
     }
 
     document.body.appendChild(document.createElement('br'));
@@ -247,6 +262,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             option.textContent = weapon.name;
             weaponSelect.appendChild(option);
         }
+        if (weaponSelect.querySelector('option[value="None"]')) {
+            weaponSelect.value = 'None';
+        }
     }
     document.body.appendChild(document.createElement('br'));
 
@@ -279,6 +297,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             option.value = weaponUpgrade.name;
             option.textContent = weaponUpgrade.name;
             weaponUpgradeSelect.appendChild(option);
+        }
+        if (weaponUpgradeSelect.querySelector('option[value="None"]')) {
+            weaponUpgradeSelect.value = 'None';
         }
     }
     document.body.appendChild(document.createElement('br'));
@@ -313,6 +334,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             option.textContent = spell.name;
             spellSelect.appendChild(option);
         }
+        if (spellSelect.querySelector('option[value="None"]')) {
+            spellSelect.value = 'None';
+        }
     }
     document.body.appendChild(document.createElement('br'));
 
@@ -345,6 +369,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             option.value = structure.name;
             option.textContent = structure.name;
             structureSelect.appendChild(option);
+        }
+        if (structureSelect.querySelector('option[value="None"]')) {
+            structureSelect.value = 'None';
         }
     }
     document.body.appendChild(document.createElement('br'));

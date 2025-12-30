@@ -144,6 +144,14 @@
     ],
     "packs": [
         {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": [],
+            "asset": "assets/None.png"
+        },
+        {
             "name": "Captains Tricorne",
             "cost": 2,
             "allowedTags": [],
@@ -273,6 +281,14 @@
         }
     ],
     "potions": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": [],
+            "asset": "assets/None.png"
+        },
         {
             "name": "Potion of Healing",
             "cost": 1,
