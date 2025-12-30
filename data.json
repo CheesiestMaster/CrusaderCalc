@@ -1,0 +1,131 @@
+{
+    "unit_types": [
+        {
+            "name": "None",
+            "unitGold": 0,
+            "asset": "None.png",
+            "tags": []
+        },
+        {
+            "name": "Soldiers",
+            "unitGold": 1,
+            "tags": ["INF", "ARMED", "NO CARGO", "NO MAGE"]
+        },
+        {
+            "name": "Healers",
+            "unitGold": 0,
+            "tags": ["INF", "NO CARGO", "NO MAGE"]
+        },
+        {
+            "name": "Laborers",
+            "unitGold": 1,
+            "tags": ["INF", "NO CARGO", "NO MAGE", "BUILDER"]
+        },
+        {
+            "name": "Siege Crew",
+            "unitGold": 2,
+            "tags": ["INF", "SIEGE", "NO CARGO", "NO MAGE"]
+        },
+        {
+            "name": "Mages",
+            "unitGold": 1,
+            "tags": ["INF", "NO CARGO", "MAGE"]
+        },
+        {
+            "name": "Supply Cart",
+            "unitGold": 0,
+            "tags": ["CAV", "NO MAGE", "CARGO ONLY"]
+        },
+        {
+            "name": "Knights",
+            "unitGold": 1,
+            "tags": ["CAV", "ARMED", "NO CARGO", "NO MAGE"]
+        },
+        {
+            "name": "Line Breakers",
+            "unitGold": 0,
+            "tags": ["WARB", "NO CARGO", "NO MAGE"]
+        },
+        {
+            "name": "Sky Beast",
+            "unitGold": 0,
+            "tags": ["WARB", "NO CARGO", "NO MAGE"]
+        },
+        {
+            "name": "Monstrosity",
+            "unitGold": 0,
+            "tags": ["WARB", "NO CARGO", "NO MAGE"]
+        }
+    ],
+    "refit_types": [
+        {
+            "name": "None",
+            "cost": 0,
+            "refitFrom": "*",
+            "unitGold": 0,
+            "tags": []
+        }
+    ],
+    "weapons": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": []
+        },
+        {
+            "name": "Crossbow",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": []
+        }
+    ],
+    "weaponUpgrades": [
+        {
+            "name": "None",
+            "cost": 0,
+            "upgradeFrom": "*",
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": []
+        }
+    ],
+    "spells": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": []
+        }
+    ],
+    "structures": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": []
+        }
+    ],
+    "packs": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": []
+        }
+    ],
+    "potions": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": ["*"],
+            "blockTags": []
+        }
+    ]
+}

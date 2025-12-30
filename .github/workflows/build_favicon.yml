@@ -1,0 +1,61 @@
+name: Build favicon.ico from icon.png
+
+on:
+  push:
+    paths:
+      - "**/*.png"
+
+permissions:
+  contents: write
+
+jobs:
+  build-favicon:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure ImageMagick is available
+        run: |
+          magick -version
+
+      - name: Build favicon.ico deterministically from ./icon.png
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ ! -f "./icon.png" ]]; then
+            echo "No ./icon.png found; nothing to do."
+            exit 0
+          fi
+
+          # Make output as stable/deterministic as possible
+          # - strip metadata, normalize colorspace, and include common favicon sizes
+          convert "./icon.png" \
+            -strip \
+            -colorspace sRGB \
+            -alpha on \
+            -define icon:auto-resize=16,24,32,48,64,128,256 \
+            "./favicon.ico"
+
+      - name: Commit favicon.ico only if it substantively changed
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # If the generated file matches the repo version, do nothing
+          if git diff --quiet -- "./favicon.ico"; then
+            echo "favicon.ico unchanged; skipping commit."
+            exit 0
+          fi
+
+          # Commit and push the updated artifact
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add ./favicon.ico
+          git commit -m "Update favicon.ico"
+          git push
