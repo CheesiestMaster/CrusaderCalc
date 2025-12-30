@@ -459,6 +459,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         return item ? item.asset : '';
     }
 
+    // Helper function to get a value from data
+    function getDataValue(category, name, attribute) {
+        if (!name || !data[category]) return 0;
+        const item = data[category].find(item => item.name === name);
+        return item && item[attribute] !== undefined ? item[attribute] : 0;
+    }
+
     // Function to update all images
     function updateImages() {
         // Unit Type
@@ -553,13 +560,168 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function updateValues() {
-        const goldBudget = document.getElementById('goldBudgetInput').value;
-        const remainingBudget = document.getElementById('remainingBudgetInput').value;
-        const unitCost = document.getElementById('unitCostInput').value;
-        const unitGoldRemaining = document.getElementById('unitGoldRemainingInput').value;
+        // Update images
         updateImages();
+
+        // Update Unit Type Gold
+        const unitTypeGold = getDataValue('unit_types', unitTypeSelect.value, 'unitGold');
+        const unitTypeGoldInput = document.getElementById('unitTypeGoldInput');
+        if (unitTypeGoldInput) {
+            unitTypeGoldInput.value = unitTypeGold;
+        }
+
+        // Update Refit Type Gold
+        const refitTypeGold = getDataValue('refit_types', refitTypeSelect.value, 'unitGold');
+        const refitTypeGoldInput = document.getElementById('refitTypeGoldInput');
+        if (refitTypeGoldInput) {
+            refitTypeGoldInput.value = refitTypeGold;
+        }
+
+        // Update Siege costs
+        const siege1Cost = getDataValue('structures', siege1Select.value, 'cost');
+        const siege1CostInput = document.getElementById('siege1CostInput');
+        if (siege1CostInput) {
+            siege1CostInput.value = siege1Cost;
+        }
+
+        const siege2Cost = getDataValue('structures', siege2Select.value, 'cost');
+        const siege2CostInput = document.getElementById('siege2CostInput');
+        if (siege2CostInput) {
+            siege2CostInput.value = siege2Cost;
+        }
+
+        // Update Pack cost
+        const packsCost = getDataValue('packs', packsSelect.value, 'cost');
+        const packsCostInput = document.getElementById('packsCostInput');
+        if (packsCostInput) {
+            packsCostInput.value = packsCost;
+        }
+
+        // Update Potion cost
+        const potionsCost = getDataValue('potions', potionsSelect.value, 'cost');
+        const potionsCostInput = document.getElementById('potionsCostInput');
+        if (potionsCostInput) {
+            potionsCostInput.value = potionsCost;
+        }
+
+        // Update Weapon costs
+        for (let i = 1; i <= 5; i++) {
+            const weaponSelect = document.getElementById(`weapon${i}Select`);
+            if (weaponSelect) {
+                const weaponCost = getDataValue('weapons', weaponSelect.value, 'cost');
+                const weaponCostInput = document.getElementById(`weapon${i}CostInput`);
+                if (weaponCostInput) {
+                    weaponCostInput.value = weaponCost;
+                }
+            }
+        }
+
+        // Update Weapon Upgrade costs
+        for (let i = 1; i <= 5; i++) {
+            const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
+            if (weaponUpgradeSelect) {
+                const weaponUpgradeCost = getDataValue('weaponUpgrades', weaponUpgradeSelect.value, 'cost');
+                const weaponUpgradeCostInput = document.getElementById(`weaponUpgrade${i}CostInput`);
+                if (weaponUpgradeCostInput) {
+                    weaponUpgradeCostInput.value = weaponUpgradeCost;
+                }
+            }
+        }
+
+        // Update Spell costs
+        for (let i = 1; i <= 5; i++) {
+            const spellSelect = document.getElementById(`spell${i}Select`);
+            if (spellSelect) {
+                const spellCost = getDataValue('spells', spellSelect.value, 'cost');
+                const spellCostInput = document.getElementById(`spell${i}CostInput`);
+                if (spellCostInput) {
+                    spellCostInput.value = spellCost;
+                }
+            }
+        }
+
+        // Update Structure costs
+        for (let i = 1; i <= 5; i++) {
+            const structureSelect = document.getElementById(`structure${i}Select`);
+            if (structureSelect) {
+                const structureCost = getDataValue('structures', structureSelect.value, 'cost');
+                const structureCostInput = document.getElementById(`structure${i}CostInput`);
+                if (structureCostInput) {
+                    structureCostInput.value = structureCost;
+                }
+            }
+        }
+
+        // Calculate total unit cost
+        let totalCost = 0;
+        
+        // Add refit cost
+        totalCost += getDataValue('refit_types', refitTypeSelect.value, 'cost');
+        
+        // Add siege costs
+        totalCost += siege1Cost + siege2Cost;
+        
+        // Add pack cost
+        totalCost += packsCost;
+        
+        // Add potion cost
+        totalCost += potionsCost;
+        
+        // Add weapon costs
+        for (let i = 1; i <= 5; i++) {
+            const weaponSelect = document.getElementById(`weapon${i}Select`);
+            if (weaponSelect) {
+                totalCost += getDataValue('weapons', weaponSelect.value, 'cost');
+            }
+        }
+        
+        // Add weapon upgrade costs
+        for (let i = 1; i <= 5; i++) {
+            const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
+            if (weaponUpgradeSelect) {
+                totalCost += getDataValue('weaponUpgrades', weaponUpgradeSelect.value, 'cost');
+            }
+        }
+        
+        // Add spell costs
+        for (let i = 1; i <= 5; i++) {
+            const spellSelect = document.getElementById(`spell${i}Select`);
+            if (spellSelect) {
+                totalCost += getDataValue('spells', spellSelect.value, 'cost');
+            }
+        }
+        
+        // Add structure costs
+        for (let i = 1; i <= 5; i++) {
+            const structureSelect = document.getElementById(`structure${i}Select`);
+            if (structureSelect) {
+                totalCost += getDataValue('structures', structureSelect.value, 'cost');
+            }
+        }
+        
+        // Update unit cost input
+        const unitCostInput = document.getElementById('unitCostInput');
+        if (unitCostInput) {
+            unitCostInput.value = totalCost;
+        }
+
+        // Calculate unit gold remaining
+        const unitGoldTotal = unitTypeGold + refitTypeGold;
+        const unitGoldRemainingInput = document.getElementById('unitGoldRemainingInput');
+        if (unitGoldRemainingInput) {
+            unitGoldRemainingInput.value = unitGoldTotal;
+        }
+
+        // Calculate remaining budget
+        const goldBudgetInput = document.getElementById('goldBudgetInput');
+        const remainingBudgetInput = document.getElementById('remainingBudgetInput');
+        if (goldBudgetInput && remainingBudgetInput) {
+            const goldBudget = parseFloat(goldBudgetInput.value) || 0;
+            const remainingBudget = goldBudget - totalCost;
+            remainingBudgetInput.value = remainingBudget >= 0 ? remainingBudget : 0;
+        }
     }
 
-    // Initialize images on page load
-    updateImages();
+    // Initialize all values on page load
+    updateValues();
 });
