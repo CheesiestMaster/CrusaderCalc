@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "**/*.png"
+  workflow_dispatch:
 
 permissions:
   contents: write
