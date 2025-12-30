@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "**/*.png"
+      - ".github/workflows/build_favicon.yml"
   workflow_dispatch:
 
 permissions:
