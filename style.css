@@ -19,7 +19,7 @@ input {
 
 input:disabled {
     background-color: #292929;
-    color: #888;
+    color: #c6c6c6;
 }
 
 input.bad {
