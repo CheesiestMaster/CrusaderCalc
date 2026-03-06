@@ -119,15 +119,89 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
+            "repeatable": 0,
             "asset": "assets/None.png"
         },
         {
-            "name": "Crossbow",
-            "cost": 0,
-            "allowedTags": [],
-            "extraUnits": ["*"],
+            "name": "Spear",
+            "cost": 1,
+            "allowedTags": ["INF"],
+            "extraUnits": [],
             "blockTags": [],
-            "asset": "assets/None.png"
+            "repeatable": 1,
+            "asset": "assets/Spear.png"
+        },
+        {
+            "name": "Sword",
+            "cost": 1,
+            "allowedTags": ["INF", "CAV"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Sword.png"
+        },
+        {
+            "name": "Axe",
+            "cost": 1,
+            "allowedTags": ["INF", "CAV"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Axe.png"
+        },
+        {
+            "name": "Hammer",
+            "cost": 1,
+            "allowedTags": ["INF", "CAV"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Hammer.png"
+        },
+        {
+            "name": "Bow",
+            "cost": 1,
+            "allowedTags": ["INF", "CAV"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Bow.png"
+        },
+        {
+            "name": "Crossbow",
+            "cost": 1,
+            "allowedTags": ["INF"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Crossbow.png"
+        },
+        {
+            "name": "Shield",
+            "cost": 1,
+            "allowedTags": ["INF", "CAV"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Shield.png"
+        },
+        {
+            "name": "Ram",
+            "cost": 1,
+            "allowedTags": ["INF"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Battering_Ram.png"
+        },
+        {
+            "name": "Lance",
+            "cost": 1,
+            "allowedTags": ["CAV"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Lance.png"
         }
     ],
     "weaponUpgrades": [
@@ -138,7 +212,238 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": [],
+            "repeatable": 0,
             "asset": "assets/None.png"
+        },
+        {
+            "name": "Longspear",
+            "cost": 2,
+            "upgradeFrom": "Spear",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Longspear.png"
+        },
+        {
+            "name": "Javelin",
+            "cost": 1,
+            "upgradeFrom": "Spear",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Javelin.png"
+        },
+        {
+            "name": "Quickblade",
+            "cost": 1,
+            "upgradeFrom": "Sword",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 0,
+            "asset": "assets/Quickblade.png"
+        },
+        {
+            "name": "Greatsword",
+            "cost": 2,
+            "upgradeFrom": "Sword",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Greatsword.png"
+        },
+        {
+            "name": "Glaive",
+            "cost": 2,
+            "upgradeFrom": "Axe",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Glaive.png"
+        },
+        {
+            "name": "Poleaxe",
+            "cost": 2,
+            "upgradeFrom": "Axe",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Poleaxe.png"
+        },
+        {
+            "name": "Bolas",
+            "cost": 1,
+            "upgradeFrom": "Hammer",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Bolas.png"
+        },
+        {
+            "name": "Maul",
+            "cost": 2,
+            "upgradeFrom": "Hammer",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Hammer.png"
+        },
+        {
+            "name": "Recurve Bow",
+            "cost": 1,
+            "upgradeFrom": "Bow",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Recurve_Bow.png"
+        },
+        {
+            "name": "Longbow",
+            "cost": 2,
+            "upgradeFrom": "Bow",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Longbow.png"
+        },
+        {
+            "name": "Hand Crossbow",
+            "cost": 1,
+            "upgradeFrom": "Crossbow",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Hand_Crossbow.png"
+        },
+        {
+            "name": "Heavy Crossbow",
+            "cost": 2,
+            "upgradeFrom": "Crossbow",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Heavy_Crossbow.png"
+        },
+        {
+            "name": "Bodkin Arrows",
+            "cost": 2,
+            "upgradeFrom": "Bow",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Bodkin_Ammo.png"
+        },
+        {
+            "name": "Flaming Arrows",
+            "cost": 1,
+            "upgradeFrom": "Bow",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Flaming_Ammo.png"
+        },
+        {
+            "name": "Seeking Arrow",
+            "cost": 1,
+            "upgradeFrom": "Bow",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 4,
+            "asset": "assets/Seeking_Ammo.png"
+        },
+        {
+            "name": "Bodkin Bolts",
+            "cost": 2,
+            "upgradeFrom": "Crossbow",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Bodkin_Ammo.png"
+        },
+        {
+            "name": "Flaming Bolts",
+            "cost": 1,
+            "upgradeFrom": "Crossbow",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Flaming_Ammo.png"
+        },
+        {
+            "name": "Seeking Bolt",
+            "cost": 1,
+            "upgradeFrom": "Crossbow",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 4,
+            "asset": "assets/Seeking_Ammo.png"
+        },
+        {
+            "name": "Spiked Shield",
+            "cost": 2,
+            "upgradeFrom": "Shield",
+            "allowedTags": ["INF", "CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 2,
+            "asset": "assets/Spiked_Shield.png"
+        },
+        {
+            "name": "Tower Shield",
+            "cost": 2,
+            "upgradeFrom": "Shield",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Tower_Shield.png"
+        },
+        {
+            "name": "Spiked Ram",
+            "cost": 1,
+            "upgradeFrom": "Ram",
+            "allowedTags": ["INF", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Spiked_Rams.png"
+        },
+        {
+            "name": "Genitour",
+            "cost": 1,
+            "upgradeFrom": "Lance",
+            "allowedTags": ["CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Javelin.png"
+        },
+        {
+            "name": "Light Lance",
+            "cost": 1,
+            "upgradeFrom": "Lance",
+            "allowedTags": ["CAV", "ARMED"],
+            "extraUnits": [],
+            "blockTags": [],
+            "repeatable": 1,
+            "asset": "assets/Light_Lance.png"
         }
     ],
     "spells": [
