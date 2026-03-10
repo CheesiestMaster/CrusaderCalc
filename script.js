@@ -432,6 +432,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         return unitType?.tags || [];
     }
 
+    // Helper to check if a given weapon upgrade is valid for the currently selected weapons
+    function hasRequiredWeaponForUpgrade(upgradeName) {
+        if (!upgradeName || !data.weaponUpgrades) return true;
+        const upgrade = data.weaponUpgrades.find(u => u.name === upgradeName);
+        if (!upgrade || !upgrade.upgradeFrom || upgrade.upgradeFrom === '*') {
+            return true;
+        }
+
+        const requiredBase = upgrade.upgradeFrom;
+
+        // Check all selected weapons to see if any match the required base weapon
+        for (let i = 1; i <= 5; i++) {
+            const weaponSelect = document.getElementById(`weapon${i}Select`);
+            if (weaponSelect && weaponSelect.value === requiredBase) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     // Helper function to check if an item should be shown based on tags
     function shouldShowItem(item) {
         const activeTags = getActiveTags();
@@ -484,40 +505,88 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    // Function to populate a dropdown with filtered items and enforce repeatable limits
+    function populateDropdownWithRepeatable(selectElement, items, currentValue, selectionCounts) {
+        selectElement.innerHTML = '';
+        for (const item of items) {
+            if (!shouldShowItem(item)) {
+                continue;
+            }
+
+            const repeatableLimit = item.repeatable || 0;
+            if (repeatableLimit > 0) {
+                const currentCount = selectionCounts[item.name] || 0;
+                // If we've already reached the limit for this item, only allow it
+                // to remain in the dropdown if it is the currently selected value.
+                if (currentCount >= repeatableLimit && item.name !== currentValue) {
+                    continue;
+                }
+            }
+
+            const option = document.createElement('option');
+            option.value = item.name;
+            option.textContent = item.name;
+            selectElement.appendChild(option);
+        }
+
+        // Try to restore previous selection or default to "None"
+        if (currentValue && selectElement.querySelector(`option[value="${currentValue}"]`)) {
+            selectElement.value = currentValue;
+        } else if (selectElement.querySelector('option[value="None"]')) {
+            selectElement.value = 'None';
+        }
+    }
+
     // Function to update all dropdowns based on current unit/refit selection
     function updateAllDropdowns() {
+        // Precompute current selection counts for repeatable enforcement
+        const weaponSelectionCounts = {};
+        const weaponUpgradeSelectionCounts = {};
+
+        for (let i = 1; i <= 5; i++) {
+            const weaponSelect = document.getElementById(`weapon${i}Select`);
+            if (weaponSelect && weaponSelect.value) {
+                weaponSelectionCounts[weaponSelect.value] = (weaponSelectionCounts[weaponSelect.value] || 0) + 1;
+            }
+
+            const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
+            if (weaponUpgradeSelect && weaponUpgradeSelect.value) {
+                weaponUpgradeSelectionCounts[weaponUpgradeSelect.value] = (weaponUpgradeSelectionCounts[weaponUpgradeSelect.value] || 0) + 1;
+            }
+        }
+
         // Update siege dropdowns
         const siege1Current = siege1Select.value;
         const siege2Current = siege2Select.value;
         populateDropdown(siege1Select, data.structures || [], siege1Current);
         populateDropdown(siege2Select, data.structures || [], siege2Current);
-
+        
         // Update packs dropdown
         const packsCurrent = packsSelect.value;
         populateDropdown(packsSelect, data.packs || [], packsCurrent);
-
+        
         // Update potions dropdown
         const potionsCurrent = potionsSelect.value;
         populateDropdown(potionsSelect, data.potions || [], potionsCurrent);
-
-        // Update weapon dropdowns
+        
+        // Update weapon dropdowns with repeatable enforcement
         for (let i = 1; i <= 5; i++) {
             const weaponSelect = document.getElementById(`weapon${i}Select`);
             if (weaponSelect) {
                 const current = weaponSelect.value;
-                populateDropdown(weaponSelect, data.weapons || [], current);
+                populateDropdownWithRepeatable(weaponSelect, data.weapons || [], current, weaponSelectionCounts);
             }
         }
-
-        // Update weapon upgrade dropdowns
+        
+        // Update weapon upgrade dropdowns with repeatable enforcement
         for (let i = 1; i <= 5; i++) {
             const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
             if (weaponUpgradeSelect) {
                 const current = weaponUpgradeSelect.value;
-                populateDropdown(weaponUpgradeSelect, data.weaponUpgrades || [], current);
+                populateDropdownWithRepeatable(weaponUpgradeSelect, data.weaponUpgrades || [], current, weaponUpgradeSelectionCounts);
             }
         }
-
+        
         // Update spell dropdowns
         for (let i = 1; i <= 5; i++) {
             const spellSelect = document.getElementById(`spell${i}Select`);
@@ -526,7 +595,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 populateDropdown(spellSelect, data.spells || [], current);
             }
         }
-
+        
         // Update structure dropdowns
         for (let i = 1; i <= 5; i++) {
             const structureSelect = document.getElementById(`structure${i}Select`);
@@ -687,14 +756,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
-        // Update Weapon Upgrade costs
+        // Update Weapon Upgrade costs and enforce upgradeFrom via error class
         for (let i = 1; i <= 5; i++) {
             const weaponUpgradeSelect = document.getElementById(`weaponUpgrade${i}Select`);
             if (weaponUpgradeSelect) {
-                const weaponUpgradeCost = getDataValue('weaponUpgrades', weaponUpgradeSelect.value, 'cost');
+                const selectedUpgradeName = weaponUpgradeSelect.value;
+
+                // Cost
+                const weaponUpgradeCost = getDataValue('weaponUpgrades', selectedUpgradeName, 'cost');
                 const weaponUpgradeCostInput = document.getElementById(`weaponUpgrade${i}CostInput`);
                 if (weaponUpgradeCostInput) {
                     weaponUpgradeCostInput.value = weaponUpgradeCost;
+                }
+
+                // Validation: add or remove "error" class based on upgradeFrom rule
+                if (hasRequiredWeaponForUpgrade(selectedUpgradeName)) {
+                    weaponUpgradeSelect.classList.remove('error');
+                } else {
+                    weaponUpgradeSelect.classList.add('error');
                 }
             }
         }
