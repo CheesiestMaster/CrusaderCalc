@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     header.textContent = 'Castles and Crusaders Unit Builder';
     document.body.appendChild(header);
 
+    const banner = document.createElement("div");
+    banner.id = "deploy-banner";
+    banner.textContent = "Deployment in progress…";
+    banner.style.display = "none";
+    document.body.appendChild(banner);
+
     const goldBudgetLabel = document.createElement('label');
     goldBudgetLabel.textContent = 'Gold Budget ';
     document.body.appendChild(goldBudgetLabel);
@@ -942,7 +948,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    async function checkPagesBuilding(owner, repo) {
+        const res = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/pages/builds/latest`
+        );
+        const data = await res.json();
+        return data.status !== "built";
+      }
+      
+      async function startDeployBanner(owner, repo) {
+        const banner = document.getElementById("deploy-banner");
+      
+        const check = async () => {
+          const isBuilding = await checkPagesBuilding(owner, repo);
+          banner.style.display = isBuilding ? "block" : "none";
+        };
+      
+        check();
+        setInterval(check, 30_000);
+      }
+
     // Initialize all dropdowns and values on page load
     updateAllDropdowns();
     updateValues();
+    startDeployBanner("cheesiestmaster", "CrusaderCalc");
 });
