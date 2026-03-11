@@ -259,7 +259,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     for (let i = 1; i <= 5; i++) {
         const weaponSelect = document.createElement('select');
         weaponSelect.id = `weapon${i}Select`;
-        weaponSelect.addEventListener('change', updateValues);
+        weaponSelect.addEventListener('change', () => {
+            updateAllDropdowns();
+            updateValues();
+        });
         document.body.appendChild(weaponSelect);
 
         // Weapons will be populated dynamically
@@ -298,7 +301,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     for (let i = 1; i <= 5; i++) {
         const weaponUpgradeSelect = document.createElement('select');
         weaponUpgradeSelect.id = `weaponUpgrade${i}Select`;
-        weaponUpgradeSelect.addEventListener('change', updateValues);
+        weaponUpgradeSelect.addEventListener('change', () => {
+            updateAllDropdowns();
+            updateValues();
+        });
         document.body.appendChild(weaponUpgradeSelect);
 
         // Weapon upgrades will be populated dynamically
