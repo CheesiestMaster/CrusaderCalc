@@ -954,7 +954,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           );
           const data = await res.json();
           const latest = data.workflow_runs?.find(
-            run => run.name === "pages-build-deployment"
+            run => run.name === "pages build and deployment"
           );
           return latest?.status !== "completed";
       }
