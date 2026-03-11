@@ -950,10 +950,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function checkPagesBuilding(owner, repo) {
         const res = await fetch(
-          `https://api.github.com/repos/${owner}/${repo}/pages/builds/latest`
-        );
-        const data = await res.json();
-        return data.status !== "built";
+            `https://api.github.com/repos/${owner}/${repo}/actions/runs?per_page=10&event=dynamic`
+          );
+          const data = await res.json();
+          const latest = data.workflow_runs?.find(
+            run => run.name === "pages-build-deployment"
+          );
+          return latest?.status !== "completed";
       }
       
       async function startDeployBanner(owner, repo) {
