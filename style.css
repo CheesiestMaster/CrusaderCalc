@@ -64,3 +64,23 @@ select:disabled {
     color: #888;
     border-color: #444;
 }
+
+select.bad {
+    border-color: #ff0000;
+}
+
+#deploy-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2a2a00;
+    color: #e0c840;
+    border-bottom: 1px solid #555a00;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    z-index: 9999;
+}

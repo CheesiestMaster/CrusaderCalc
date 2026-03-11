@@ -781,11 +781,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                     weaponUpgradeCostInput.value = weaponUpgradeCost;
                 }
 
-                // Validation: add or remove "error" class based on upgradeFrom rule
+                // Validation: add or remove "bad" class based on upgradeFrom rule
                 if (hasRequiredWeaponForUpgrade(selectedUpgradeName)) {
-                    weaponUpgradeSelect.classList.remove('error');
+                    weaponUpgradeSelect.classList.remove('bad');
                 } else {
-                    weaponUpgradeSelect.classList.add('error');
+                    weaponUpgradeSelect.classList.add('bad');
                 }
             }
         }
