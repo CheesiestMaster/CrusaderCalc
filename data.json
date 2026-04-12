@@ -11,21 +11,21 @@
             "name": "Soldiers",
             "cost": 1,
             "unitGold": 1,
-            "asset": "assets/Soldier.png",
+            "asset": "assets/Soldiers.png",
             "tags": ["INF", "ARMED", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Healers",
             "cost": 1,
             "unitGold": 0,
-            "asset": "assets/Healer.png",
+            "asset": "assets/Healers.png",
             "tags": ["INF", "NO CARGO", "NO MAGE"]
         },
         {
             "name": "Laborers",
             "cost": 1,
             "unitGold": 1,
-            "asset": "assets/Laborer.png",
+            "asset": "assets/Laborers.png",
             "tags": ["INF", "NO CARGO", "NO MAGE", "BUILDER"]
         },
         {
@@ -39,7 +39,7 @@
             "name": "Mages",
             "cost": 1,
             "unitGold": 1,
-            "asset": "assets/Mage.png",
+            "asset": "assets/Mages.png",
             "tags": ["INF", "NO CARGO", "MAGE"]
         },
         {
@@ -53,7 +53,7 @@
             "name": "Knights",
             "cost": 1,
             "unitGold": 1,
-            "asset": "assets/Knight.png",
+            "asset": "assets/Knights.png",
             "tags": ["CAV", "ARMED", "NO CARGO", "NO MAGE"]
         },
         {
@@ -192,7 +192,7 @@
             "extraUnits": [],
             "blockTags": [],
             "repeatable": 1,
-            "asset": "assets/Battering_Ram.png"
+            "asset": "assets/Ram.png"
         },
         {
             "name": "Lance",
@@ -263,7 +263,7 @@
             "extraUnits": [],
             "blockTags": [],
             "repeatable": 1,
-            "asset": "assets/Glaive.png"
+            "asset": "assets/Glave.png"
         },
         {
             "name": "Poleaxe",
@@ -293,17 +293,17 @@
             "extraUnits": [],
             "blockTags": [],
             "repeatable": 1,
-            "asset": "assets/Hammer.png"
+            "asset": "assets/Maul.png"
         },
         {
-            "name": "Recurve Bow",
+            "name": "Composite Bow",
             "cost": 1,
             "upgradeFrom": "Bow",
             "allowedTags": ["INF", "CAV", "ARMED"],
             "extraUnits": [],
             "blockTags": [],
             "repeatable": 1,
-            "asset": "assets/Recurve_Bow.png"
+            "asset": "assets/Composite_Bow.png"
         },
         {
             "name": "Longbow",
@@ -423,7 +423,7 @@
             "extraUnits": [],
             "blockTags": [],
             "repeatable": 1,
-            "asset": "assets/Spiked_Rams.png"
+            "asset": "assets/Spiked_Ram.png"
         },
         {
             "name": "Genitour",
@@ -481,7 +481,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Tricorn.png"
+            "asset": "assets/Captains_Tricorne.png"
         },
         {
             "name": "Fins of the Unagi",
@@ -497,7 +497,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Bag_of_Holding.png"
+            "asset": "assets/Bag_Of_Holding.png"
         },
         {
             "name": "Greaves of the Fox",
@@ -537,7 +537,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Carriers_Saddle.png"
+            "asset": "assets/Carrier_Saddle.png"
         },
         {
             "name": "Gloves of the Tiger",
@@ -545,7 +545,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Tiger_Gauntlets.png"
+            "asset": "assets/Gloves_of_the_Tiger.png"
         },
         {
             "name": "Honor Guard",
@@ -561,7 +561,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Breastplate.png"
+            "asset": "assets/Heavy_Armor.png"
         },
         {
             "name": "Arrow Slits",
@@ -585,7 +585,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Vet.png"
+            "asset": "assets/Veterenarian.png"
         },
         {
             "name": "Constructor",
@@ -593,7 +593,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Constructor_Pack.png"
+            "asset": "assets/Constructor.png"
         },
         {
             "name": "Cloak of the Chameleon",
@@ -601,7 +601,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Cloak_of_Chameleon.png"
+            "asset": "assets/Cloak_of_the_Chameleon.png"
         }
     ],
     "potions": [
@@ -619,7 +619,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Health_Potion.png"
+            "asset": "assets/Healing_Potion.png"
         },
         {
             "name": "Potion of Mana",
@@ -651,7 +651,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Invis_Potion.png"
+            "asset": "assets/Invisibility_Potion.png"
         },
         {
             "name": "Potion of Stoneskin",
@@ -675,7 +675,7 @@
             "allowedTags": [],
             "extraUnits": ["*"],
             "blockTags": ["NONE"],
-            "asset": "assets/Potion_of_Enlarging.png"
+            "asset": "assets/Enlarging_Potion.png"
         }
     ]
 }
