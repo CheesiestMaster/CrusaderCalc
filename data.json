@@ -1241,7 +1241,7 @@
         {
             "name": "Stable",
             "cost": 1,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Stable.png"
@@ -1249,7 +1249,7 @@
         {
             "name": "Watch Tower",
             "cost": 1,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Watch_Tower.png"
@@ -1257,7 +1257,7 @@
         {
             "name": "Shrine",
             "cost": 1,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Shrine.png"
@@ -1265,7 +1265,7 @@
         {
             "name": "Smith",
             "cost": 1,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Smith.png"
@@ -1273,7 +1273,7 @@
         {
             "name": "Apothecary",
             "cost": 1,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Apothecary.png"
@@ -1281,7 +1281,7 @@
         {
             "name": "Mill",
             "cost": 1,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Mill.png"
@@ -1289,7 +1289,7 @@
         {
             "name": "Dock",
             "cost": 1,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Dock.png"
@@ -1297,7 +1297,7 @@
         {
             "name": "Exotic Stable",
             "cost": 2,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Exotic_Stable.png"
@@ -1305,7 +1305,7 @@
         {
             "name": "Hospital",
             "cost": 2,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Hospital.png"
@@ -1313,7 +1313,7 @@
         {
             "name": "Keep",
             "cost": 2,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Keep.png"
@@ -1321,7 +1321,7 @@
         {
             "name": "Fortress",
             "cost": 2,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Fortress.png"
@@ -1329,7 +1329,7 @@
         {
             "name": "Temple",
             "cost": 2,
-            "allowedTags": [],
+            "allowedTags": ["BUILDER"],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Temple.png"
