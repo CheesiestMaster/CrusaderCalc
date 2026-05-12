@@ -194,7 +194,8 @@
             "tags": [
                 "INF",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -206,7 +207,8 @@
             "tags": [
                 "INF",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -218,7 +220,9 @@
             "tags": [
                 "CAV",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "BUILDER",
+                "UNARMED"
             ]
         },
         {
@@ -230,7 +234,9 @@
             "tags": [
                 "INF",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "BUILDER",
+                "UNARMED"
             ]
         },
         {
@@ -242,7 +248,9 @@
             "tags": [
                 "INF",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "BUILDER",
+                "UNARMED"
             ]
         },
         {
@@ -254,7 +262,8 @@
             "tags": [
                 "CAV",
                 "CARGO ONLY",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -305,7 +314,8 @@
             "tags": [
                 "INF",
                 "NO CARGO",
-                "MAGE"
+                "MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -317,7 +327,8 @@
             "tags": [
                 "INF",
                 "NO CARGO",
-                "MAGE"
+                "MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -368,7 +379,8 @@
             "tags": [
                 "CAV",
                 "CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -393,7 +405,8 @@
             "tags": [
                 "CAV",
                 "CARGO ONLY",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -405,7 +418,8 @@
             "tags": [
                 "WARB",
                 "CARGO ONLY",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -430,7 +444,8 @@
             "tags": [
                 "WARB",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -442,7 +457,8 @@
             "tags": [
                 "WARB",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -467,7 +483,8 @@
             "tags": [
                 "WARB",
                 "CARGO ONLY",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -479,7 +496,8 @@
             "tags": [
                 "WARB",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -491,7 +509,8 @@
             "tags": [
                 "WARB",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         },
         {
@@ -503,7 +522,8 @@
             "tags": [
                 "WARB",
                 "NO CARGO",
-                "NO MAGE"
+                "NO MAGE",
+                "UNARMED"
             ]
         }
     ],
@@ -526,7 +546,9 @@
                 "INF"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Spear.png"
         },
@@ -538,7 +560,9 @@
                 "CAV"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Sword.png"
         },
@@ -550,7 +574,9 @@
                 "CAV"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Axe.png"
         },
@@ -562,7 +588,9 @@
                 "CAV"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Hammer.png"
         },
@@ -574,7 +602,9 @@
                 "CAV"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Bow.png"
         },
@@ -585,7 +615,9 @@
                 "INF"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Crossbow.png"
         },
@@ -597,7 +629,9 @@
                 "CAV"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Shield.png"
         },
@@ -608,7 +642,9 @@
                 "INF"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Ram.png"
         },
@@ -619,7 +655,9 @@
                 "CAV"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Lance.png"
         }
@@ -646,7 +684,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Longspear.png"
         },
@@ -659,7 +699,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Javelin.png"
         },
@@ -673,7 +715,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Quickblade.png"
         },
@@ -686,7 +730,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Greatsword.png"
         },
@@ -700,7 +746,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Glave.png"
         },
@@ -713,7 +761,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Poleaxe.png"
         },
@@ -727,7 +777,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Bolas.png"
         },
@@ -740,12 +792,14 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Maul.png"
         },
         {
-            "name": "Composite Bow",
+            "name": "Recurve Bow",
             "cost": 1,
             "upgradeFrom": "Bow",
             "allowedTags": [
@@ -754,9 +808,11 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
-            "asset": "assets/Composite_Bow.png"
+            "asset": "assets/Recurve_Bow.png"
         },
         {
             "name": "Longbow",
@@ -767,7 +823,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Longbow.png"
         },
@@ -780,7 +838,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Hand_Crossbow.png"
         },
@@ -793,7 +853,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Heavy_Crossbow.png"
         },
@@ -807,7 +869,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Bodkin_Ammo.png"
         },
@@ -821,7 +885,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Flaming_Ammo.png"
         },
@@ -835,7 +901,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 4,
             "asset": "assets/Seeking_Ammo.png"
         },
@@ -848,7 +916,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Bodkin_Ammo.png"
         },
@@ -861,7 +931,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Flaming_Ammo.png"
         },
@@ -874,7 +946,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 4,
             "asset": "assets/Seeking_Ammo.png"
         },
@@ -888,7 +962,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 2,
             "asset": "assets/Spiked_Shield.png"
         },
@@ -901,7 +977,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Tower_Shield.png"
         },
@@ -914,7 +992,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Spiked_Ram.png"
         },
@@ -927,7 +1007,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Javelin.png"
         },
@@ -940,7 +1022,9 @@
                 "ARMED"
             ],
             "extraUnits": [],
-            "blockTags": [],
+            "blockTags": [
+                "UNARMED"
+            ],
             "repeatable": 1,
             "asset": "assets/Light_Lance.png"
         }
@@ -1241,7 +1325,9 @@
         {
             "name": "Stable",
             "cost": 1,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Stable.png"
@@ -1249,7 +1335,9 @@
         {
             "name": "Watch Tower",
             "cost": 1,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Watch_Tower.png"
@@ -1257,7 +1345,9 @@
         {
             "name": "Shrine",
             "cost": 1,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Shrine.png"
@@ -1265,7 +1355,9 @@
         {
             "name": "Smith",
             "cost": 1,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Smith.png"
@@ -1273,7 +1365,9 @@
         {
             "name": "Apothecary",
             "cost": 1,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Apothecary.png"
@@ -1281,7 +1375,9 @@
         {
             "name": "Mill",
             "cost": 1,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Mill.png"
@@ -1289,7 +1385,9 @@
         {
             "name": "Dock",
             "cost": 1,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Dock.png"
@@ -1297,7 +1395,9 @@
         {
             "name": "Exotic Stable",
             "cost": 2,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Exotic_Stable.png"
@@ -1305,7 +1405,9 @@
         {
             "name": "Hospital",
             "cost": 2,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Hospital.png"
@@ -1313,7 +1415,9 @@
         {
             "name": "Keep",
             "cost": 2,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Keep.png"
@@ -1321,7 +1425,9 @@
         {
             "name": "Fortress",
             "cost": 2,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Fortress.png"
@@ -1329,7 +1435,9 @@
         {
             "name": "Temple",
             "cost": 2,
-            "allowedTags": ["BUILDER"],
+            "allowedTags": [
+                "BUILDER"
+            ],
             "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Temple.png"
@@ -1565,9 +1673,7 @@
             "allowedTags": [
                 "INF"
             ],
-            "extraUnits": [
-                "*"
-            ],
+            "extraUnits": [],
             "blockTags": [],
             "asset": "assets/Carpenter.png"
         },
