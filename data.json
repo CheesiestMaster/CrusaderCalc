@@ -1837,5 +1837,41 @@
             ],
             "asset": "assets/Sharpness_Potion.png"
         }
+    ],
+    "siegeWeapons": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": [
+                "*"
+            ],
+            "blockTags": [],
+            "asset": "assets/None.png"
+        }
+    ],
+    "boats": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": [
+                "*"
+            ],
+            "blockTags": [],
+            "asset": "assets/None.png"
+        }
+    ],
+    "boatUpgrades": [
+        {
+            "name": "None",
+            "cost": 0,
+            "allowedTags": [],
+            "extraUnits": [
+                "*"
+            ],
+            "blockTags": [],
+            "asset": "assets/None.png"
+        }
     ]
 }
