@@ -1,0 +1,49 @@
+name: build
+
+on:
+  push:
+    branches: [rust]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: jetli/wasm-pack-action@v0.4.0
+
+      - run: wasm-pack build --release --target web
+
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          path: out
+
+      - name: Replace out/pkg
+        run: |
+          rm -rf out/pkg
+          mkdir out/pkg
+          cp pkg/*.js pkg/*.wasm out/pkg/
+
+      - name: Commit and push
+        working-directory: out
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A pkg
+          git diff --cached --quiet && exit 0
+          git commit -m "deploy ${GITHUB_SHA::7}"
+          git push
