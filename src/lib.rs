@@ -960,6 +960,9 @@ fn run() {
     debug!("allocation base_used {} refit_used {} refit_ok {}", a.base_used, a.refit_used, a.refit_ok);
     if remaining_budget < 0 {
         warn!("company cost {} exceeds budget {}", company_used, form_state.budget);
+        remaining_budget_input.set_class_name("bad");
+    } else {
+        remaining_budget_input.set_class_name("");
     }
     if a.refit_ok {
         refit_type_select.set_class_name("");
@@ -968,16 +971,19 @@ fn run() {
         refit_type_select.set_class_name("bad");
     }
 
-    let oninput_closure = Closure::<dyn FnMut(web_sys::Event) -> ()>::new(oninput);
+    let oninput_closure = Closure::<dyn FnMut(web_sys::Event)>::new(oninput);
     form.set_oninput(Some(oninput_closure.as_ref().unchecked_ref()));
     oninput_closure.forget();
     debug!("oninput closure created");
 
     horizontal_rule!(d, body);
-    if local_storage.is_some() && local_storage.as_ref().unwrap().set_item("_test", "test").is_ok() && local_storage.as_ref().unwrap().get_item("_test").is_ok() {
+    if let Some(local_storage) = local_storage
+        && local_storage.set_item("_test", "test").is_ok()
+        && local_storage.get_item("_test").is_ok()
+    {
         info!("local storage is usable, creating save and load controls");
 
-        let save_closure = Closure::<dyn FnMut(web_sys::Event) -> ()>::new(save);
+        let save_closure = Closure::<dyn FnMut(web_sys::Event)>::new(save);
         
         debug!("break line created");
         let save_1 = d.create_element("button").unwrap().unchecked_into::<HtmlButtonElement>();
@@ -1019,7 +1025,7 @@ fn run() {
         load_1_form.append_child(&load_1_input).unwrap();
         load_1_input.set_id("load_1_input");
         load_1_input.set_name("L");
-        load_1_input.set_value(stored_save(local_storage.as_ref().unwrap(), "crusadercalc:save_1").as_str());
+        load_1_input.set_value(stored_save(&local_storage, "crusadercalc:save_1").as_str());
         load_1_input.set_hidden(true);
         load_1_form.append_child(&load_1_button).unwrap();
         load_1_button.set_text_content(Some("Load 1"));
@@ -1033,7 +1039,7 @@ fn run() {
         load_2_form.append_child(&load_2_input).unwrap();
         load_2_input.set_id("load_2_input");
         load_2_input.set_name("L");
-        load_2_input.set_value(stored_save(local_storage.as_ref().unwrap(), "crusadercalc:save_2").as_str());
+        load_2_input.set_value(stored_save(&local_storage, "crusadercalc:save_2").as_str());
         load_2_input.set_hidden(true);
         load_2_form.append_child(&load_2_button).unwrap();
         load_2_button.set_text_content(Some("Load 2"));
@@ -1047,7 +1053,7 @@ fn run() {
         load_3_form.append_child(&load_3_input).unwrap();
         load_3_input.set_id("load_3_input");
         load_3_input.set_name("L");
-        load_3_input.set_value(stored_save(local_storage.as_ref().unwrap(), "crusadercalc:save_3").as_str());
+        load_3_input.set_value(stored_save(&local_storage, "crusadercalc:save_3").as_str());
         load_3_input.set_hidden(true);
         load_3_form.append_child(&load_3_button).unwrap();
         load_3_button.set_text_content(Some("Load 3"));
@@ -1061,7 +1067,7 @@ fn run() {
         load_4_form.append_child(&load_4_input).unwrap();
         load_4_input.set_id("load_4_input");
         load_4_input.set_name("L");
-        load_4_input.set_value(stored_save(local_storage.as_ref().unwrap(), "crusadercalc:save_4").as_str());
+        load_4_input.set_value(stored_save(&local_storage, "crusadercalc:save_4").as_str());
         load_4_input.set_hidden(true);
         load_4_form.append_child(&load_4_button).unwrap();
         load_4_button.set_text_content(Some("Load 4"));
@@ -1075,7 +1081,7 @@ fn run() {
         load_5_form.append_child(&load_5_input).unwrap();
         load_5_input.set_id("load_5_input");
         load_5_input.set_name("L");
-        load_5_input.set_value(stored_save(local_storage.as_ref().unwrap(), "crusadercalc:save_5").as_str());
+        load_5_input.set_value(stored_save(&local_storage, "crusadercalc:save_5").as_str());
         load_5_input.set_hidden(true);
         load_5_form.append_child(&load_5_button).unwrap();
         load_5_button.set_text_content(Some("Load 5"));
@@ -1087,7 +1093,7 @@ fn run() {
         copy_button.set_id("copy_button");
         copy_button.set_text_content(Some("Copy"));
         let code: [u8; 35] = form_state.into();
-        let code_string = URL_SAFE_NO_PAD.encode(&code);
+        let code_string = URL_SAFE_NO_PAD.encode(code);
         copy_button.set_attribute("onclick",   format!(
             "navigator.clipboard.writeText(location.origin+location.pathname+'?L={}')",
             code_string
@@ -1361,6 +1367,7 @@ fn oninput(_: web_sys::Event) {
     vessel_5_upgrade_select.set_inner_html("");
     valid_vessel_upgrades[4].iter().map(|&v| Into::<HtmlOptionElement>::into(v)).for_each(|option| {vessel_5_upgrade_select.append_child(&option).unwrap();});
     log_select!(vessel_5_upgrade_select, Into::<u8>::into(new_vessel_5_upgrade).to_string());
+    form_state.vessel_upgrades[4] = new_vessel_5_upgrade;
 
     let costs = form_state.costs();
     let base_cost = i32::from(form_state.unit_type.cost());
@@ -1398,6 +1405,29 @@ fn oninput(_: web_sys::Event) {
         set_number_input(&format!("vessel_{}_upgrade_cost", index + 1), upgrade.cost());
     }
 
+    set_image("unit_type_image", &form_state.unit_type.asset());
+    set_image("refit_type_image", &form_state.refit_type.asset());
+    set_image("siege_image", &form_state.siege.asset());
+    set_image("heavy_siege_image", &form_state.heavy_siege.asset());
+    set_image("pack_image", &form_state.pack.asset());
+    set_image("potion_image", &form_state.potion.asset());
+    set_image("vessel_image", &form_state.vessel.asset());
+    for (index, weapon) in form_state.weapons.iter().enumerate() {
+        set_image(&format!("weapon_{}_image", index + 1), &weapon.asset());
+    }
+    for (index, upgrade) in form_state.weapon_upgrades.iter().enumerate() {
+        set_image(&format!("weapon_{}_upgrade_image", index + 1), &upgrade.asset());
+    }
+    for (index, spell) in form_state.spells.iter().enumerate() {
+        set_image(&format!("spell_{}_image", index + 1), &spell.asset());
+    }
+    for (index, structure) in form_state.structures.iter().enumerate() {
+        set_image(&format!("structure_{}_image", index + 1), &structure.asset());
+    }
+    for (index, upgrade) in form_state.vessel_upgrades.iter().enumerate() {
+        set_image(&format!("vessel_{}_upgrade_image", index + 1), &upgrade.asset());
+    }
+
     let remaining_budget_input = get_element_by_id!("remaining_budget").unchecked_into::<HtmlInputElement>();
     let unit_cost_input = get_element_by_id!("unit_cost").unchecked_into::<HtmlInputElement>();
     let unit_gold_remaining_input = get_element_by_id!("unit_gold_remaining").unchecked_into::<HtmlInputElement>();
@@ -1410,6 +1440,9 @@ fn oninput(_: web_sys::Event) {
     debug!("allocation base_used {} refit_used {} refit_ok {}", a.base_used, a.refit_used, a.refit_ok);
     if remaining_budget < 0 {
         warn!("company cost {} exceeds budget {}", company_used, form_state.budget);
+        remaining_budget_input.set_class_name("bad");
+    } else {
+        remaining_budget_input.set_class_name("");
     }
     if a.refit_ok {
         refit_type_select.set_class_name("");
@@ -1419,7 +1452,7 @@ fn oninput(_: web_sys::Event) {
     }
 
     let code: [u8; 35] = form_state.into();
-    let code_string = URL_SAFE_NO_PAD.encode(&code);
+    let code_string = URL_SAFE_NO_PAD.encode(code);
     let copy_button = get_element_by_id!("copy_button").unchecked_into::<HtmlButtonElement>();
     copy_button.set_attribute("onclick",   format!(
         "navigator.clipboard.writeText(location.origin+location.pathname+'?L={}')",
@@ -1436,6 +1469,10 @@ fn oninput(_: web_sys::Event) {
 
 fn set_number_input(id: &str, value: u8) {
     get_element_by_id!(id).unchecked_into::<HtmlInputElement>().set_value(&value.to_string());
+}
+
+fn set_image(id: &str, asset: &str) {
+    get_element_by_id!(id).unchecked_into::<HtmlImageElement>().set_src(asset);
 }
 
 fn stored_save(storage: &web_sys::Storage, key: &str) -> String {
@@ -1485,7 +1522,7 @@ fn save(event: web_sys::Event) {
         }
     };
     let code: [u8; 35] = form_state.into();
-    let code_string = URL_SAFE_NO_PAD.encode(&code);
+    let code_string = URL_SAFE_NO_PAD.encode(code);
     let key = format!("crusadercalc:{}", target.id());
     if let Err(err) = localstorage.set_item(&key, code_string.as_str()) {
         error!("failed to write {}: {:?}", key, err);

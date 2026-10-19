@@ -50,8 +50,5 @@ lto = true
 [profile.dev.build-override]
 debug = true
 
-[build]
-target = "wasm32-unknown-unknown"
-
 [package.metadata.wasm-pack.profile.dev.wasm-bindgen]
 dwarf-debug-info = true
