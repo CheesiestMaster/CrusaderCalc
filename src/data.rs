@@ -143,7 +143,7 @@ pub(crate) trait Named {
 
 pub(crate) trait Asset: Named {
     fn asset(&self) -> String {
-        format!("/assets/{}.png", self.name())
+        format!("assets/{}.png", self.name())
     }
 }
 
