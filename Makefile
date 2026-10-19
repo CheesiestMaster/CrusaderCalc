@@ -1,3 +1,5 @@
+.PHONEY dev release clean check
+
 dev:
 	wasm-pack build --dev --target web --out-dir pkg
 	cp web/index.html pkg/index.html
