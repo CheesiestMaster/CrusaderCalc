@@ -1,4 +1,4 @@
-.PHONEY dev release clean check
+.PHONY dev release clean check
 
 dev:
 	wasm-pack build --dev --target web --out-dir pkg
