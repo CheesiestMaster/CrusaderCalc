@@ -164,6 +164,9 @@ function __wbg_get_imports() {
         __wbg_set_className_f682baa8f21f2696: function(arg0, arg1, arg2) {
             arg0.className = getStringFromWasm0(arg1, arg2);
         },
+        __wbg_set_height_d10e4fd5f0afd4c6: function(arg0, arg1) {
+            arg0.height = arg1 >>> 0;
+        },
         __wbg_set_hidden_7eef60d46b7aff74: function(arg0, arg1) {
             arg0.hidden = arg1 !== 0;
         },
@@ -217,6 +220,9 @@ function __wbg_get_imports() {
         },
         __wbg_set_value_cdb4f0d5ef366401: function(arg0, arg1, arg2) {
             arg0.value = getStringFromWasm0(arg1, arg2);
+        },
+        __wbg_set_width_08069a10c6a4be07: function(arg0, arg1) {
+            arg0.width = arg1 >>> 0;
         },
         __wbg_stack_3b0d974bbf31e44f: function(arg0, arg1) {
             const ret = arg1.stack;
