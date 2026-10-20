@@ -202,6 +202,8 @@ fn run() {
     let unit_type_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     unit_type_image.set_id("unit_type_image");
     unit_type_image.set_src(form_state.unit_type.asset().as_str());
+    unit_type_image.set_width(50);
+    unit_type_image.set_height(50);
     form.append_child(&unit_type_image).unwrap();
     debug!("unit type image created");
     let refit_type_label = d.create_element("label").unwrap();
@@ -220,6 +222,8 @@ fn run() {
     let refit_type_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     refit_type_image.set_id("refit_type_image");
     refit_type_image.set_src(form_state.refit_type.asset().as_str());
+    refit_type_image.set_width(50);
+    refit_type_image.set_height(50);
     form.append_child(&refit_type_image).unwrap();
     debug!("refit type image created");
     break_line!(d, form);
@@ -263,6 +267,8 @@ fn run() {
     let siege_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     siege_image.set_id("siege_image");
     siege_image.set_src(form_state.siege.asset().as_str());
+    siege_image.set_width(50);
+    siege_image.set_height(50);
     form.append_child(&siege_image).unwrap();
     debug!("siege image created");
     let heavy_siege_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -277,6 +283,8 @@ fn run() {
     let heavy_siege_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     heavy_siege_image.set_id("heavy_siege_image");
     heavy_siege_image.set_src(form_state.heavy_siege.asset().as_str());
+    heavy_siege_image.set_width(50);
+    heavy_siege_image.set_height(50);
     form.append_child(&heavy_siege_image).unwrap();
     debug!("heavy siege image created");
     let pack_label = d.create_element("label").unwrap();
@@ -295,6 +303,8 @@ fn run() {
     let pack_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     pack_image.set_id("pack_image");
     pack_image.set_src(form_state.pack.asset().as_str());
+    pack_image.set_width(50);
+    pack_image.set_height(50);
     form.append_child(&pack_image).unwrap();
     debug!("pack image created");
     let potion_label = d.create_element("label").unwrap();
@@ -313,6 +323,8 @@ fn run() {
     let potion_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     potion_image.set_id("potion_image");
     potion_image.set_src(form_state.potion.asset().as_str());
+    potion_image.set_width(50);
+    potion_image.set_height(50);
     form.append_child(&potion_image).unwrap();
     debug!("potion image created");
     let vessel_label = d.create_element("label").unwrap();
@@ -331,6 +343,8 @@ fn run() {
     let vessel_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     vessel_image.set_id("vessel_image");
     vessel_image.set_src(form_state.vessel.asset().as_str());
+    vessel_image.set_width(50);
+    vessel_image.set_height(50);
     form.append_child(&vessel_image).unwrap();
     debug!("vessel image created");
     break_line!(d, form);
@@ -392,6 +406,8 @@ fn run() {
     let weapon_1_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_1_image.set_id("weapon_1_image");
     weapon_1_image.set_src(form_state.weapons[0].asset().as_str());
+    weapon_1_image.set_width(50);
+    weapon_1_image.set_height(50);
     form.append_child(&weapon_1_image).unwrap();
     debug!("weapon 1 image created");
     let weapon_2_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -405,6 +421,8 @@ fn run() {
     let weapon_2_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_2_image.set_id("weapon_2_image");
     weapon_2_image.set_src(form_state.weapons[1].asset().as_str());
+    weapon_2_image.set_width(50);
+    weapon_2_image.set_height(50);
     form.append_child(&weapon_2_image).unwrap();
     debug!("weapon 2 image created");
     let weapon_3_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -418,6 +436,8 @@ fn run() {
     let weapon_3_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_3_image.set_id("weapon_3_image");
     weapon_3_image.set_src(form_state.weapons[2].asset().as_str());
+    weapon_3_image.set_width(50);
+    weapon_3_image.set_height(50);
     form.append_child(&weapon_3_image).unwrap();
     debug!("weapon 3 image created");
     let weapon_4_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -431,6 +451,8 @@ fn run() {
     let weapon_4_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_4_image.set_id("weapon_4_image");
     weapon_4_image.set_src(form_state.weapons[3].asset().as_str());
+    weapon_4_image.set_width(50);
+    weapon_4_image.set_height(50);
     form.append_child(&weapon_4_image).unwrap();
     debug!("weapon 4 image created");
     let weapon_5_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -444,6 +466,8 @@ fn run() {
     let weapon_5_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_5_image.set_id("weapon_5_image");
     weapon_5_image.set_src(form_state.weapons[4].asset().as_str());
+    weapon_5_image.set_width(50);
+    weapon_5_image.set_height(50);
     form.append_child(&weapon_5_image).unwrap();
     debug!("weapon 5 image created");
     break_line!(d, form);
@@ -505,6 +529,8 @@ fn run() {
     let weapon_1_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_1_upgrade_image.set_id("weapon_1_upgrade_image");
     weapon_1_upgrade_image.set_src(form_state.weapon_upgrades[0].asset().as_str());
+    weapon_1_upgrade_image.set_width(50);
+    weapon_1_upgrade_image.set_height(50);
     form.append_child(&weapon_1_upgrade_image).unwrap();
     debug!("weapon 1 upgrade image created");
     let weapon_2_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -518,6 +544,8 @@ fn run() {
     let weapon_2_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_2_upgrade_image.set_id("weapon_2_upgrade_image");
     weapon_2_upgrade_image.set_src(form_state.weapon_upgrades[1].asset().as_str());
+    weapon_2_upgrade_image.set_width(50);
+    weapon_2_upgrade_image.set_height(50);
     form.append_child(&weapon_2_upgrade_image).unwrap();
     debug!("weapon 2 upgrade image created");
     let weapon_3_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -531,6 +559,8 @@ fn run() {
     let weapon_3_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_3_upgrade_image.set_id("weapon_3_upgrade_image");
     weapon_3_upgrade_image.set_src(form_state.weapon_upgrades[2].asset().as_str());
+    weapon_3_upgrade_image.set_width(50);
+    weapon_3_upgrade_image.set_height(50);
     form.append_child(&weapon_3_upgrade_image).unwrap();
     debug!("weapon 3 upgrade image created");
     let weapon_4_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -544,6 +574,8 @@ fn run() {
     let weapon_4_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_4_upgrade_image.set_id("weapon_4_upgrade_image");
     weapon_4_upgrade_image.set_src(form_state.weapon_upgrades[3].asset().as_str());
+    weapon_4_upgrade_image.set_width(50);
+    weapon_4_upgrade_image.set_height(50);
     form.append_child(&weapon_4_upgrade_image).unwrap();
     debug!("weapon 4 upgrade image created");
     let weapon_5_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -557,6 +589,8 @@ fn run() {
     let weapon_5_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     weapon_5_upgrade_image.set_id("weapon_5_upgrade_image");
     weapon_5_upgrade_image.set_src(form_state.weapon_upgrades[4].asset().as_str());
+    weapon_5_upgrade_image.set_width(50);
+    weapon_5_upgrade_image.set_height(50);
     form.append_child(&weapon_5_upgrade_image).unwrap();
     debug!("weapon 5 upgrade image created");
     break_line!(d, form);
@@ -618,6 +652,8 @@ fn run() {
     let spell_1_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     spell_1_image.set_id("spell_1_image");
     spell_1_image.set_src(form_state.spells[0].asset().as_str());
+    spell_1_image.set_width(50);
+    spell_1_image.set_height(50);
     form.append_child(&spell_1_image).unwrap();
     debug!("spell 1 image created");
     let spell_2_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -631,6 +667,8 @@ fn run() {
     let spell_2_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     spell_2_image.set_id("spell_2_image");
     spell_2_image.set_src(form_state.spells[1].asset().as_str());
+    spell_2_image.set_width(50);
+    spell_2_image.set_height(50);
     form.append_child(&spell_2_image).unwrap();
     debug!("spell 2 image created");
     let spell_3_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -644,6 +682,8 @@ fn run() {
     let spell_3_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     spell_3_image.set_id("spell_3_image");
     spell_3_image.set_src(form_state.spells[2].asset().as_str());
+    spell_3_image.set_width(50);
+    spell_3_image.set_height(50);
     form.append_child(&spell_3_image).unwrap();
     debug!("spell 3 image created");
     let spell_4_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -657,6 +697,8 @@ fn run() {
     let spell_4_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     spell_4_image.set_id("spell_4_image");
     spell_4_image.set_src(form_state.spells[3].asset().as_str());
+    spell_4_image.set_width(50);
+    spell_4_image.set_height(50);
     form.append_child(&spell_4_image).unwrap();
     debug!("spell 4 image created");
     let spell_5_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -670,6 +712,8 @@ fn run() {
     let spell_5_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     spell_5_image.set_id("spell_5_image");
     spell_5_image.set_src(form_state.spells[4].asset().as_str());
+    spell_5_image.set_width(50);
+    spell_5_image.set_height(50);
     form.append_child(&spell_5_image).unwrap();
     debug!("spell 5 image created");
     break_line!(d, form);
@@ -732,6 +776,8 @@ fn run() {
     let structure_1_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     structure_1_image.set_id("structure_1_image");
     structure_1_image.set_src(form_state.structures[0].asset().as_str());
+    structure_1_image.set_width(50);
+    structure_1_image.set_height(50);
     form.append_child(&structure_1_image).unwrap();
     debug!("structure 1 image created");
     let structure_2_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -745,6 +791,8 @@ fn run() {
     let structure_2_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     structure_2_image.set_id("structure_2_image");
     structure_2_image.set_src(form_state.structures[1].asset().as_str());
+    structure_2_image.set_width(50);
+    structure_2_image.set_height(50);
     form.append_child(&structure_2_image).unwrap();
     debug!("structure 2 image created");
     let structure_3_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -758,6 +806,8 @@ fn run() {
     let structure_3_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     structure_3_image.set_id("structure_3_image");
     structure_3_image.set_src(form_state.structures[2].asset().as_str());
+    structure_3_image.set_width(50);
+    structure_3_image.set_height(50);
     form.append_child(&structure_3_image).unwrap();
     debug!("structure 3 image created");
     let structure_4_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -771,6 +821,8 @@ fn run() {
     let structure_4_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     structure_4_image.set_id("structure_4_image");
     structure_4_image.set_src(form_state.structures[3].asset().as_str());
+    structure_4_image.set_width(50);
+    structure_4_image.set_height(50);
     form.append_child(&structure_4_image).unwrap();
     debug!("structure 4 image created");
     let structure_5_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -784,6 +836,8 @@ fn run() {
     let structure_5_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     structure_5_image.set_id("structure_5_image");
     structure_5_image.set_src(form_state.structures[4].asset().as_str());
+    structure_5_image.set_width(50);
+    structure_5_image.set_height(50);
     form.append_child(&structure_5_image).unwrap();
     break_line!(d, form);
     debug!("break line created");
@@ -844,6 +898,8 @@ fn run() {
     let vessel_1_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     vessel_1_upgrade_image.set_id("vessel_1_upgrade_image");
     vessel_1_upgrade_image.set_src(form_state.vessel_upgrades[0].asset().as_str());
+    vessel_1_upgrade_image.set_width(50);
+    vessel_1_upgrade_image.set_height(50);
     form.append_child(&vessel_1_upgrade_image).unwrap();
     debug!("vessel 1 upgrade image created");
     let vessel_2_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -857,6 +913,8 @@ fn run() {
     let vessel_2_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     vessel_2_upgrade_image.set_id("vessel_2_upgrade_image");
     vessel_2_upgrade_image.set_src(form_state.vessel_upgrades[1].asset().as_str());
+    vessel_2_upgrade_image.set_width(50);
+    vessel_2_upgrade_image.set_height(50);
     form.append_child(&vessel_2_upgrade_image).unwrap();
     debug!("vessel 2 upgrade image created");
     let vessel_3_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -870,6 +928,8 @@ fn run() {
     let vessel_3_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     vessel_3_upgrade_image.set_id("vessel_3_upgrade_image");
     vessel_3_upgrade_image.set_src(form_state.vessel_upgrades[2].asset().as_str());
+    vessel_3_upgrade_image.set_width(50);
+    vessel_3_upgrade_image.set_height(50);
     form.append_child(&vessel_3_upgrade_image).unwrap();
     debug!("vessel 3 upgrade image created");
     let vessel_4_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -883,6 +943,8 @@ fn run() {
     let vessel_4_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     vessel_4_upgrade_image.set_id("vessel_4_upgrade_image");
     vessel_4_upgrade_image.set_src(form_state.vessel_upgrades[3].asset().as_str());
+    vessel_4_upgrade_image.set_width(50);
+    vessel_4_upgrade_image.set_height(50);
     form.append_child(&vessel_4_upgrade_image).unwrap();
     debug!("vessel 4 upgrade image created");
     let vessel_5_upgrade_select = d.create_element("select").unwrap().unchecked_into::<HtmlSelectElement>();
@@ -896,6 +958,8 @@ fn run() {
     let vessel_5_upgrade_image = d.create_element("img").unwrap().unchecked_into::<HtmlImageElement>();
     vessel_5_upgrade_image.set_id("vessel_5_upgrade_image");
     vessel_5_upgrade_image.set_src(form_state.vessel_upgrades[4].asset().as_str());
+    vessel_5_upgrade_image.set_width(50);
+    vessel_5_upgrade_image.set_height(50);
     form.append_child(&vessel_5_upgrade_image).unwrap();
     debug!("vessel 5 upgrade image created");
     break_line!(d, form);
